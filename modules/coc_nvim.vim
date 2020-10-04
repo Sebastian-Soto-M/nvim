@@ -17,7 +17,7 @@ aug coc_def | au!
 aug end
 
 aug plugins | au!
-    autocmd FileType * call s:explorer()
+    autocmd FileType,BufEnter * call s:explorer()
 aug end
 
 function! s:explorer()
