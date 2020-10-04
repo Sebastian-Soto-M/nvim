@@ -8,7 +8,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 " Theme / Interface
 Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
 Plug 'josa42/vim-lightline-coc'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'yuttie/comfortable-motion.vim'
@@ -24,4 +23,7 @@ Plug 'tpope/vim-surround'
 " Motion
 Plug 'christoomey/vim-sort-motion'
 Plug 'michaeljsmith/vim-indent-object'
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()

@@ -28,6 +28,7 @@ aug end
 aug plugins | au!
     autocmd FileType,BufEnter * call s:explorer()
     autocmd FileType,BufEnter * call s:actions()
+    autocmd FileType,BufEnter * call s:git()
 aug end
 
 func! s:actions()
@@ -51,6 +52,12 @@ func! s:explorer()
                 \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
                 \   }
                 \ }
+endf
+
+func s:git()
+    nmap <leader>gh :diffget //3<CR>
+    nmap <leader>gu :diffget //2<CR>
+    nmap <leader>gs :G<CR>
 endf
 
 " Functions for extensions
