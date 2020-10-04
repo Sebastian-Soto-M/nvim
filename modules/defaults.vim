@@ -28,11 +28,30 @@ set fo-=t
 set foldmethod=syntax
 set nofoldenable
 set clipboard=unnamedplus
-"
+
 " Search
 set hlsearch
 set ignorecase
 set incsearch
+
+" Mappings
+ino <C-J> <C-O>o<C-G>u
+ino <C-K> <C-O>O<C-G>u
+no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+ino {<CR> {<CR>}<C-o>O
+ino jk <ESC>
+map <silent> <F6> :setlocal spell! spelllang=es<CR>
+no <CR> :nohlsearch<cr>
+nn <c-h> <c-w>h
+nn <c-j> <c-w>j
+nn <c-k> <c-w>k
+nn <c-l> <c-w>l
+no <leader>vr :so $MYVIMRC<CR>
+no <silent> <C-c> :Commands<CR>
+nn <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nn <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+noremap <silent> <leader>w :wa<CR>
 
 " Mouse
 set mouse=a
