@@ -5,10 +5,14 @@ let g:coc_global_extensions = [
             \ 'coc-explorer',
             \ 'coc-git',
             \ 'coc-html',
+            \ 'coc-java',
+            \ 'coc-json',
             \ 'coc-pairs',
             \ 'coc-prettier',
+            \ 'coc-python',
             \ 'coc-snippets',
             \ 'coc-vimlsp',
+            \ 'coc-xml',
             \ 'coc-yank',
             \ ]
 
