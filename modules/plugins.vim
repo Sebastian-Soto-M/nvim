@@ -29,6 +29,7 @@ Plug 'tpope/vim-surround'
 " Motion
 Plug 'christoomey/vim-sort-motion'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'preservim/tagbar'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -36,6 +37,7 @@ Plug 'itchyny/vim-gitbranch'
 
 " Format
 Plug 'preservim/nerdcommenter'
+Plug 'dhruvasagar/vim-table-mode'
 
 " FileType
 
