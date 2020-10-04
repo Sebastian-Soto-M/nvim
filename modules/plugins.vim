@@ -13,4 +13,7 @@ Plug 'dracula/vim', {'as':'dracula'}
 call plug#end()
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Finding
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
