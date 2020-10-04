@@ -8,12 +8,21 @@ let g:coc_global_extensions = [
             \ ]
 
 aug coc_def | au!
-  autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  " Show yank list
-  nn <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
+    " Show yank list
+    nn <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+    
+    " refactor
+    nmap <leader>qf  <Plug>(coc-fix-current)
+    nmap <leader>rr <Plug>(coc-rename)
+
+    " search
+    nmap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+    nmap <space>s  :CocSearch 
 aug end
 
 aug plugins | au!
