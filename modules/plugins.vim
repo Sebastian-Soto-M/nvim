@@ -11,19 +11,29 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'yuttie/comfortable-motion.vim'
+
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 " Search & Replace
 Plug 'tpope/vim-abolish' 
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-surround'
+
 " Motion
 Plug 'christoomey/vim-sort-motion'
 Plug 'michaeljsmith/vim-indent-object'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/vim-gitbranch'
+
+" Format
+Plug 'preservim/nerdcommenter'
+
+" FileType
 call plug#end()
