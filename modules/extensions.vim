@@ -1,10 +1,14 @@
 let g:coc_global_extensions = [
             \ 'coc-actions',
+            \ 'coc-css',
+            \ 'coc-emmet',
             \ 'coc-explorer',
             \ 'coc-git',
+            \ 'coc-html',
             \ 'coc-pairs',
             \ 'coc-prettier',
             \ 'coc-snippets',
+            \ 'coc-vimlsp',
             \ 'coc-yank',
             \ ]
 
