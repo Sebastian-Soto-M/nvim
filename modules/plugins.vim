@@ -8,12 +8,20 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 " Theme / Interface
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'josa42/vim-lightline-coc'
 Plug 'dracula/vim', {'as':'dracula'}
-call plug#end()
+Plug 'yuttie/comfortable-motion.vim'
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Search & Replace
+Plug 'tpope/vim-abolish' 
+Plug 'unblevable/quick-scope'
+Plug 'tpope/vim-surround'
+" Motion
+Plug 'christoomey/vim-sort-motion'
+Plug 'michaeljsmith/vim-indent-object'
 call plug#end()
