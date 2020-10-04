@@ -11,3 +11,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'dracula/vim', {'as':'dracula'}
 call plug#end()
+" Autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
