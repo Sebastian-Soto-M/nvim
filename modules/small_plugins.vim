@@ -20,3 +20,9 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 nmap ++ <plug>NERDCommenterToggle
 vmap ++ <plug>NERDCommenterToggle
+
+let g:colorizer_auto_color=1
+let g:colorizer_skip_comments=1
+let g:colorizer_disable_bufleave=1
+let g:colorizer_auto_filetype='scss,sass,css,html'
+let g:colorizer_colornames = 0

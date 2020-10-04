@@ -6,10 +6,12 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+
 " Theme / Interface
+Plug 'chrisbra/Colorizer'
+Plug 'dracula/vim', {'as':'dracula'}
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-Plug 'dracula/vim', {'as':'dracula'}
 Plug 'yuttie/comfortable-motion.vim'
 
 " Autocompletion
