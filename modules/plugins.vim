@@ -38,6 +38,7 @@ Plug 'itchyny/vim-gitbranch'
 " Format
 Plug 'preservim/nerdcommenter'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'Chiel92/vim-autoformat'
 
 " FileType
 
