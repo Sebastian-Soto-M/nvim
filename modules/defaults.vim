@@ -10,10 +10,10 @@ set smartindent
 set smarttab
 set softtabstop=4
 set tabstop=4
+
 " Backup
-"
-set noswapfile
 set nobackup
+set noswapfile
 set undodir=~/.config/nvim/undodir
 set undofile
 
@@ -37,21 +37,32 @@ set incsearch
 " Mappings
 ino <C-J> <C-O>o<C-G>u
 ino <C-K> <C-O>O<C-G>u
-no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-ino {<CR> {<CR>}<C-o>O
+
 ino jk <ESC>
-map <silent> <F6> :setlocal spell! spelllang=es<CR>
+ino {<CR> {<CR>}<C-o>O
 no <CR> :nohlsearch<cr>
+no <leader>vr :so $MYVIMRC<CR>
+no <silent> <leader>w :wa<CR>
+
+map <silent> <F6> :setlocal spell! spelllang=es<CR>
+
 nn <c-h> <c-w>h
 nn <c-j> <c-w>j
 nn <c-k> <c-w>k
 nn <c-l> <c-w>l
-no <leader>vr :so $MYVIMRC<CR>
-no <silent> <C-c> :Commands<CR>
+
+no <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
 nn <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nn <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-noremap <silent> <leader>w :wa<CR>
+
+nmap <silent> <leader>X :bufdo bd<CR>
+nmap <silent> <leader>[ :tabp<CR>
+nmap <silent> <leader>] :tabn<CR>
+nmap <silent> <leader>x :tabclose<CR>
+
+no <silent> <C-c> :Commands<CR>
 
 " Mouse
 set mouse=a

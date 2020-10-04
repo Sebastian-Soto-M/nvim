@@ -38,7 +38,8 @@ inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',
             \ 'source': 'rg -n ^ --color always',
             \ 'options': '--ansi --delimiter : --nth 3..',
-            \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
+            \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }
+            \ }))
 
 " Popup
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
