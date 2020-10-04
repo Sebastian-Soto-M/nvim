@@ -30,3 +30,9 @@ let g:colorizer_colornames = 0
 let g:vim_markdown_folding_disabled=1
 
 let g:user_emmet_leader_key=','
+
+no <silent> <leader>tc :ColorToggle<CR>
+
+map <leader>tb :TableModeToggle<CR>
+
+map <leader>tg :TagbarToggle<CR>
