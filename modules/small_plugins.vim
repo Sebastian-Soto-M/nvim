@@ -26,3 +26,7 @@ let g:colorizer_skip_comments=1
 let g:colorizer_disable_bufleave=1
 let g:colorizer_auto_filetype='scss,sass,css,html'
 let g:colorizer_colornames = 0
+
+let g:vim_markdown_folding_disabled=1
+
+let g:user_emmet_leader_key=','

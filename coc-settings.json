@@ -1,4 +1,9 @@
 {
+  "emmet.includeLanguages": { "jinja.html": "html", "jinja": "html" },
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.showSuggestionsAsSnippets": true,
+
   "explorer.buffer.tabOnly": true,
   "explorer.file.column.git.icon.added": "",
   "explorer.file.column.git.icon.deleted": "",
@@ -38,5 +43,4 @@
       "port": 6008
     }
   }
-
 }

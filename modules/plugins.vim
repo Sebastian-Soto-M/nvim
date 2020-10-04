@@ -38,4 +38,13 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'preservim/nerdcommenter'
 
 " FileType
+
+    " HTML
+Plug 'mattn/emmet-vim'
+
+    " Markdown
+Plug 'godlygeek/tabular'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
