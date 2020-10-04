@@ -33,6 +33,11 @@
     "v": "open:vsplit"
   },
 
+  "html.autoClosingTags": true,
+  "html.enable": true,
+  "html.filetypes": ["html", "jinja", "jinja.html"],
+  "html.format.enable": false,
+  "html.format.indentInnerHtml": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -55,5 +60,16 @@
       "filetypes": ["gdscript"],
       "port": 6008
     }
+  },
+
+  "prettier.bracketSpacing": true,
+  "prettier.disableLanguages": ["vue"],
+  "prettier.printWidth": 80,
+  "prettier.trailingComma": "all",
+
+  "snippets.extends": {
+    "html": ["jinja", "jinja.html"],
+    "jinja": ["html", "jinja.html"],
+    "jinja.html": ["jinja", "html"]
   }
 }
