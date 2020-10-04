@@ -18,9 +18,15 @@ aug end
 
 aug plugins | au!
     autocmd FileType,BufEnter * call s:explorer()
+    autocmd FileType,BufEnter * call s:actions()
 aug end
 
-function! s:explorer()
+func! s:actions()
+    xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+    nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+endf
+
+func! s:explorer()
     nn <silent> <space><space> :CocCommand explorer<CR>
     nn <silent> <space>et :CocCommand explorer --preset tab<CR>
     nn <silent> <space>el :CocList explPresets<CR>
@@ -37,3 +43,9 @@ function! s:explorer()
                 \   }
                 \ }
 endf
+
+" Functions for extensions
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+
