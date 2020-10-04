@@ -1,4 +1,17 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "html",
+    "sass",
+    "javascript",
+    "json",
+    "python",
+    "scss",
+    "sh",
+    "xml"
+  ],
+
   "emmet.includeLanguages": { "jinja.html": "html", "jinja": "html" },
   "emmet.showAbbreviationSuggestions": true,
   "emmet.showExpandedAbbreviation": "always",
