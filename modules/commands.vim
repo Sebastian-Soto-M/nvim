@@ -12,6 +12,7 @@ augroup END
 aug filetype_mappings | au!
     autocmd FileType,BufEnter * call s:mshell()
     autocmd FileType,BufEnter * call s:mpython()
+    autocmd FileType,BufEnter * call s:mjava()
 aug end
 
 func! s:mpython()
@@ -22,3 +23,7 @@ func! s:mshell()
     au FileType sh,bash,zsh vn <buffer> <silent> <leader>f :Tabularize /)\\|;;<CR>
 endf
 
+func! s:mjava()
+    let g:formatdef_cstm_java='"astyle --mode=java --style=java"'
+    let g:formatters_java=['cstm_java']
+endf
