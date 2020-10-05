@@ -1,4 +1,4 @@
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+au User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 let g:lightline = {
             \ 'colorscheme': 'dracula',

@@ -32,7 +32,7 @@ function! s:fzf_statusline()
     highlight fzf3 ctermfg=237 ctermbg=251
     setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
 endfunction
-autocmd! User FzfStatusLine call <SID>fzf_statusline()
+au! User FzfStatusLine call <SID>fzf_statusline()
 
 inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',

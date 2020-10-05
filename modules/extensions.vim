@@ -17,10 +17,10 @@ let g:coc_global_extensions = [
             \ ]
 
 aug coc_def | au!
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-
+    au FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    au BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
     " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
     " Show yank list
     nn <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
@@ -35,9 +35,9 @@ aug coc_def | au!
 aug end
 
 aug plugins | au!
-    autocmd FileType,BufEnter * call s:explorer()
-    autocmd FileType,BufEnter * call s:actions()
-    autocmd FileType,BufEnter * call s:git()
+    au FileType,BufEnter * call s:explorer()
+    au FileType,BufEnter * call s:actions()
+    au FileType,BufEnter * call s:git()
 aug end
 
 func! s:actions()
