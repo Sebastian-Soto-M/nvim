@@ -2,6 +2,7 @@
 set noshowmode
 set nu rnu
 set smartcase
+filetype plugin indent on
 
 " Tabs & Spaces
 set expandtab
