@@ -13,6 +13,7 @@ Plug 'dracula/vim', {'as':'dracula'}
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
