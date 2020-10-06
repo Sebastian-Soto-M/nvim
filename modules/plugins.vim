@@ -41,7 +41,6 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'Chiel92/vim-autoformat'
 
 " FileType
-Plug 'honza/vim-snippets'
 
     " HTML
 Plug 'mattn/emmet-vim'
@@ -52,6 +51,8 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'plasticboy/vim-markdown'
 
 " Development
+Plug 'honza/vim-snippets'
 Plug 'preservim/tagbar'
+Plug 'puremourning/vimspector' 
 
 call plug#end()
