@@ -6,6 +6,7 @@ let g:coc_global_extensions = [
             \ 'coc-git',
             \ 'coc-html',
             \ 'coc-java',
+            \ 'coc-java-debug',
             \ 'coc-json',
             \ 'coc-pairs',
             \ 'coc-prettier',
@@ -24,7 +25,7 @@ aug coc_def | au!
 
     " Show yank list
     nn <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
-    
+
     " refactor
     nmap <leader>qf  <Plug>(coc-fix-current)
     nmap <leader>rr <Plug>(coc-rename)
