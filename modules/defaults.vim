@@ -45,8 +45,6 @@ nn <CR> :nohlsearch<cr>
 no <leader>vr :so $MYVIMRC<CR>
 no <silent> <leader>w :wa<CR>
 
-map <silent> <F6> :setlocal spell! spelllang=es<CR>
-
 nn <c-h> <c-w>h
 nn <c-j> <c-w>j
 nn <c-k> <c-w>k
@@ -113,4 +111,5 @@ function ToggleWrap()
     endif
 endfunction
 
-
+" Commands
+command SpellEs setlocal spell! spelllang=es
