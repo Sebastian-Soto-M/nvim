@@ -79,5 +79,20 @@
     "html": ["jinja", "jinja.html"],
     "jinja": ["html", "jinja.html"],
     "jinja.html": ["jinja", "html"]
+  },
+
+  "suggest.completionItemKindLabels": {
+    "class": "ﰩ",
+    "constant": "",
+    "enum": "ﰊ",
+    "enumMember": "ﰉ",
+    "field": "",
+    "interface": "",
+    "keyword": "",
+    "method": "",
+    "property": "",
+    "snippet": "",
+    "text": "",
+    "variable": ""
   }
 }

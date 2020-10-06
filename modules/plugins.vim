@@ -30,7 +30,6 @@ Plug 'tpope/vim-surround'
 " Motion
 Plug 'christoomey/vim-sort-motion'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'preservim/tagbar'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -42,6 +41,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'Chiel92/vim-autoformat'
 
 " FileType
+Plug 'honza/vim-snippets'
 
     " HTML
 Plug 'mattn/emmet-vim'
@@ -50,5 +50,8 @@ Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'plasticboy/vim-markdown'
+
+" Development
+Plug 'preservim/tagbar'
 
 call plug#end()
