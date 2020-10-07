@@ -43,7 +43,8 @@
   "java.codeGeneration.generateComments": false,
   "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
-  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/intuite.xml",
+  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
   "java.home": "/home/snsm/.local/share/sdkman/candidates/java/current",
 
   "languageserver": {
