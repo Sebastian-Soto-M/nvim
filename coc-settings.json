@@ -43,7 +43,7 @@
   "java.codeGeneration.generateComments": false,
   "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
-  "java.format.settings.url": "/home/snsm/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/intuite.xml",
   "java.home": "/home/snsm/.local/share/sdkman/candidates/java/current",
 
   "languageserver": {
