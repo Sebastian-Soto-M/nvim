@@ -26,9 +26,6 @@ aug coc_def | au!
     " Update signature help on jump placeholder.
     au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
-    " Show yank list
-    nn <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
-
     " refactor
     nmap <leader>qf  <Plug>(coc-fix-current)
     nmap <leader>rr <Plug>(coc-rename)
@@ -39,8 +36,9 @@ aug coc_def | au!
 aug end
 
 aug plugins | au!
-    au FileType,BufEnter * call s:explorer()
     au FileType,BufEnter * call s:actions()
+    au FileType,BufEnter * call s:coc_fzf()
+    au FileType,BufEnter * call s:explorer()
     au FileType,BufEnter * call s:git()
 aug end
 
@@ -67,13 +65,24 @@ func! s:explorer()
                 \ }
 endf
 
-func s:git()
+func! s:git()
     nmap <leader>gj :diffget //3<CR>
     nmap <leader>gf :diffget //2<CR>
     nmap <leader>gs :G<CR>
     nmap <leader>gp :Gpush<CR>
     nmap <leader>gf :Gfetch<CR>
     nmap <leader>gl :Gpull<CR>
+endf
+
+func! s:coc_fzf()
+    nn <silent> <space>t :<C-u>CocFzfList snippets<CR>
+    nn <silent> <space>y :<C-u>CocFzfList yank<CR>
+    no <silent> <space>c :<C-u>CocFzfList commands<CR>
+    no <silent> <space>e :<C-u>CocFzfList extensions<CR>
+    no <silent> <space>g :<C-u>BCommits<CR>
+    no <silent> <space>o :<C-u>CocFzfList outline<CR>
+    no <silent> <space>p :<C-u>CocFzfListResume<CR>
+    set mouse=a
 endf
 
 " Functions for extensions
