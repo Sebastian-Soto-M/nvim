@@ -21,6 +21,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
 
 " Search & Replace
 Plug 'tpope/vim-abolish' 

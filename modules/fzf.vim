@@ -26,14 +26,6 @@ function! FzfSpell()
                 \ 'down': 10})
 endfunction
 
-function! s:fzf_statusline()
-    highlight fzf1 ctermfg=161 ctermbg=251
-    highlight fzf2 ctermfg=23 ctermbg=251
-    highlight fzf3 ctermfg=237 ctermbg=251
-    setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-endfunction
-au! User FzfStatusLine call <SID>fzf_statusline()
-
 inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',
             \ 'source': 'rg -n ^ --color always',
@@ -43,19 +35,3 @@ inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
 
 " Popup
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-
-" Colors
-let g:fzf_colors =
-    \ { 'bg':      ['bg', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'fg':      ['fg', 'Normal'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'header':  ['fg', 'Comment'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'spinner': ['fg', 'Label']}
