@@ -112,4 +112,4 @@ function ToggleWrap()
 endfunction
 
 " Commands
-command SpellEs setlocal spell! spelllang=es
+command! SpellEs setlocal spell! spelllang=es
