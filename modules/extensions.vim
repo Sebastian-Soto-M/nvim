@@ -1,7 +1,9 @@
 let g:coc_global_extensions = [
             \ 'coc-actions',
+            \ 'coc-angular',
             \ 'coc-css',
             \ 'coc-emmet',
+            \ 'coc-eslint',
             \ 'coc-explorer',
             \ 'coc-git',
             \ 'coc-html',
@@ -12,6 +14,7 @@ let g:coc_global_extensions = [
             \ 'coc-prettier',
             \ 'coc-python',
             \ 'coc-snippets',
+            \ 'coc-tsserver',
             \ 'coc-vimlsp',
             \ 'coc-xml',
             \ 'coc-yank',
