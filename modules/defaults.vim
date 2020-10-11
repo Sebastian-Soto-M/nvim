@@ -40,7 +40,6 @@ ino <C-J> <C-O>o<C-G>u
 ino <C-K> <C-O>O<C-G>u
 
 ino jk <ESC>
-ino {<CR> {<CR>}<C-o>O
 nn <CR> :nohlsearch<cr>
 no <leader>vr :so $MYVIMRC<CR>
 no <silent> <leader>w :wa<CR>
