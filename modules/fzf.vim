@@ -3,7 +3,6 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 ino <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
 nmap <leader><tab> <plug>(fzf-maps-n)
-nn <silent> z= :call FzfSpell()<CR>
 omap <leader><tab> <plug>(fzf-maps-o)
 xmap <leader><tab> <plug>(fzf-maps-x)
 
@@ -19,12 +18,14 @@ endfunction
 
 function! FzfSpell()
     let suggestions = spellsuggest(expand("<cword>"))
-    "return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
     return fzf#run({'window': { 'width': 0.35, 'height': 0.9, 'xoffset': 1 },
                 \ 'source': suggestions,
                 \ 'sink': function("FzfSpellSink"),
                 \ 'down': 10})
 endfunction
+
+autocmd FileType css,java,javascript,python,sass,scss,typescript setlocal spell  spelllang=en_us
+autocmd FileType css,java,javascript,python,sass,scss,typescript nn <silent> z= :call FzfSpell()<CR>
 
 inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',

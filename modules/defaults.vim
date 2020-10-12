@@ -2,6 +2,7 @@
 set noshowmode
 set nu rnu
 set smartcase
+set cpt+=kspell
 filetype plugin indent on
 
 " Tabs & Spaces
