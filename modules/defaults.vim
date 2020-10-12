@@ -109,6 +109,3 @@ function ToggleWrap()
         inoremap <buffer> <silent> <End>  <C-o>g<End>
     endif
 endfunction
-
-" Commands
-command! SpellEs setlocal spell! spelllang=es
