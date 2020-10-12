@@ -9,3 +9,4 @@ source $HOME/.config/nvim/modules/extensions.vim
 source $HOME/.config/nvim/modules/fzf.vim
 source $HOME/.config/nvim/modules/small_plugins.vim
 source $HOME/.config/nvim/modules/vimspector.vim
+source $HOME/.config/nvim/modules/hlnext.vim
