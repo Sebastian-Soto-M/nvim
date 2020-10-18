@@ -110,3 +110,6 @@ function ToggleWrap()
         inoremap <buffer> <silent> <End>  <C-o>g<End>
     endif
 endfunction
+
+let g:python3_host_prog="/home/snsm/.config/virtualenvs/nvim/bin/python"
+
