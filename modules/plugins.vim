@@ -43,6 +43,9 @@ Plug 'Chiel92/vim-autoformat'
 
 " FileType
 
+    " CSV
+Plug 'chrisbra/csv.vim'
+
     " HTML
 Plug 'mattn/emmet-vim'
 

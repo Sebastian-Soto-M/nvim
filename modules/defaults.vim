@@ -45,6 +45,9 @@ nn <A-CR> :nohlsearch<cr>
 no <leader>vr :so $MYVIMRC<CR>
 no <silent> <leader>w :wa<CR>
 
+" select entire file
+no <c-a> ggVG
+
 nn <c-h> <c-w>h
 nn <c-j> <c-w>j
 nn <c-k> <c-w>k
