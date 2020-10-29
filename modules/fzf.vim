@@ -24,8 +24,8 @@ function! FzfSpell()
                 \ 'down': 10})
 endfunction
 
-autocmd FileType css,java,javascript,python,sass,scss,typescript setlocal spell  spelllang=en_us
-autocmd FileType css,java,javascript,python,sass,scss,typescript nn <silent> z= :call FzfSpell()<CR>
+au FileType css,javascript,python,sass,scss,typescript setlocal spell  spelllang=en_us
+au FileType css,javascript,python,sass,scss,typescript nn <silent> z= :call FzfSpell()<CR>
 
 inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
             \ 'prefix': '^.*$',
