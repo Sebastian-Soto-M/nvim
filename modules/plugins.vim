@@ -14,6 +14,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'ap/vim-buftabline'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
