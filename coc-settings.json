@@ -34,6 +34,8 @@
     "v": "open:vsplit"
   },
 
+  "bookmark.sign": "",
+
   "html.autoClosingTags": true,
   "html.enable": true,
   "html.filetypes": ["html", "jinja", "jinja.html"],

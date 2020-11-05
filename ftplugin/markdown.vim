@@ -6,4 +6,4 @@ let g:vim_markdown_folding_disabled = 0
 
 au FileType markdown setlocal spell spelllang=en_us,es
 ino  <Esc>[s1z=`]a
-set shiftwidth=2
+setlocal shiftwidth=2 tabstop=2

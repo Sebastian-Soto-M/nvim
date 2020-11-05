@@ -1,6 +1,7 @@
+            " \ 'coc-angular',
 let g:coc_global_extensions = [
             \ 'coc-actions',
-            \ 'coc-angular',
+            \ 'coc-bookmark',
             \ 'coc-css',
             \ 'coc-emmet',
             \ 'coc-explorer',
@@ -32,6 +33,7 @@ aug coc_def | au!
     " search
     nmap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
     nmap <space>s  :CocSearch 
+    nn <silent> <space>b :CocList bookmark<CR>
 aug end
 
 aug plugins | au!
