@@ -1,6 +1,7 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "html",
     "javascript",
     "json",
     "markdown",
@@ -18,18 +19,18 @@
   "emmet.showSuggestionsAsSnippets": true,
 
   "explorer.buffer.tabOnly": true,
-  "explorer.file.column.git.icon.added": "",
-  "explorer.file.column.git.icon.deleted": "",
-  "explorer.file.column.git.icon.ignored": "",
-  "explorer.file.column.git.icon.modified": "",
-  "explorer.file.column.git.icon.renamed": "",
+  "explorer.git.icon.status.added": "",
+  "explorer.git.icon.status.deleted": "",
+  "explorer.git.icon.status.ignored": "",
+  "explorer.git.icon.status.modified": "",
+  "explorer.git.icon.status.renamed": "",
   "explorer.floating.border.enable": false,
   "explorer.icon.enableNerdfont": true,
   "explorer.icon.selected": "",
   "explorer.previewAction.onHover": false,
   "explorer.width": 30,
 
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "v": "open:vsplit"
   },
 
