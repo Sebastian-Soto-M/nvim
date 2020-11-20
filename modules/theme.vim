@@ -1,3 +1,3 @@
-colorscheme dracula
+colorscheme gruvbox
 set termguicolors
-highlight CursorLine guibg=#44475A
+" highlight CursorLine guibg=#44475A

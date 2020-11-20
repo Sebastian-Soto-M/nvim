@@ -10,11 +10,11 @@ call plug#begin('~/.config/nvim/plugged')
 " Theme / Interface
 Plug 'chrisbra/Colorizer'
 Plug 'dracula/vim', {'as':'dracula'}
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'ap/vim-buftabline'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -54,6 +54,10 @@ Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'plasticboy/vim-markdown'
+
+    " Typescript
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
 
 " Development
 Plug 'honza/vim-snippets'
