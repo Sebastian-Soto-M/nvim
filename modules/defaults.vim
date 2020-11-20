@@ -57,12 +57,12 @@ no <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nn <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nn <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-nmap <silent> <leader>X :bufdo bd<CR>
-nmap <silent> <leader>[ :bp<CR>
-nmap <silent> <leader>] :bn<CR>
-nmap <silent> <leader>{ :tabp<CR>
-nmap <silent> <leader>} :tabn<CR>
-nmap <silent> <leader>x :tabclose<CR>
+no <silent> <leader>X :bufdo bd<CR>
+no <silent> <leader>[ :bp<CR>
+no <silent> <leader>] :bn<CR>
+no <silent> <leader>{ :tabp<CR>
+no <silent> <leader>} :tabn<CR>
+no <silent> <leader>x :tabclose<CR>
 
 no <silent> <C-c> :Commands<CR>
 

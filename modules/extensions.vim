@@ -1,6 +1,6 @@
-            " \ 'coc-angular',
 let g:coc_global_extensions = [
             \ 'coc-actions',
+            \ 'coc-angular',
             \ 'coc-bookmark',
             \ 'coc-css',
             \ 'coc-emmet',
@@ -31,8 +31,8 @@ aug coc_def | au!
     nmap <leader>rr <Plug>(coc-rename)
 
     " search
-    nmap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-    nmap <space>s  :CocSearch 
+    no <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+    no <space>s  :CocSearch 
     nn <silent> <space>b :CocList bookmark<CR>
 aug end
 
@@ -45,7 +45,7 @@ aug end
 
 func! s:actions()
     xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-    nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+    no <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 endf
 
 func! s:explorer()
@@ -67,12 +67,13 @@ func! s:explorer()
 endf
 
 func! s:git()
-    nmap <leader>gj :diffget //3<CR>
-    nmap <leader>gf :diffget //2<CR>
-    nmap <leader>gs :G<CR>
-    nmap <leader>gp :Gpush<CR>
-    nmap <leader>gf :Gfetch<CR>
-    nmap <leader>gl :Gpull<CR>
+    no <space>vj :diffget //3<CR>              " Gets the right panel
+    no <space>vf :diffget //2<CR>              " Gets the left panel
+    no <space>vs :G<CR>                        " Open version control
+    no <space>vu :CocCommand git.chunkUndo<CR> " Undo chunk
+    no <space>vi <Plug>(coc-git-chunkinfo)     " get chuck info
+    nmap <space>vp <Plug>(coc-git-prevchunk)zz " Get to the prev chuck and center
+    nmap <space>vn <Plug>(coc-git-nextchunk)zz " Get to the prev chuck and center
 endf
 
 func! s:coc_fzf()
