@@ -45,12 +45,13 @@ aug end
 
 func! s:actions()
     xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-    no <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+    nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 endf
 
 func! s:explorer()
     nn <silent> <space><space> :CocCommand explorer<CR>
     nn <silent> <space>et :CocCommand explorer --preset tab<CR>
+    nn <silent> <space>ev :CocCommand explorer --preset vim<CR>
     nn <silent> <space>el :CocList explPresets<CR>
     let g:coc_explorer_global_presets = {
                 \   'vim': {
@@ -71,9 +72,9 @@ func! s:git()
     no <space>vf :diffget //2<CR>              " Gets the left panel
     no <space>vs :G<CR>                        " Open version control
     no <space>vu :CocCommand git.chunkUndo<CR> " Undo chunk
-    no <space>vi <Plug>(coc-git-chunkinfo)     " get chuck info
-    nmap <space>vp <Plug>(coc-git-prevchunk)zz " Get to the prev chuck and center
-    nmap <space>vn <Plug>(coc-git-nextchunk)zz " Get to the prev chuck and center
+    no <space>vi :CocCommand git.chunkInfo<CR> " get chuck info
+    nmap <space>vp <Plug>(coc-git-prevchunk)   " Get to the prev chuck and center
+    nmap <space>vn <Plug>(coc-git-nextchunk)   " Get to the prev chuck and center
 endf
 
 func! s:coc_fzf()
