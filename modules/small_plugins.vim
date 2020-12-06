@@ -32,3 +32,13 @@ no <silent> <leader>tc :ColorToggle<CR>
 map <leader>tb :TableModeToggle<CR>
 
 map <leader>tg :TagbarToggle<CR>
+
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00FF00 guifg=#000000
+endfunction
+
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"

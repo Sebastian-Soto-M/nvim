@@ -9,7 +9,7 @@ filetype plugin indent on
 set expandtab
 set smartindent
 set smarttab
-set softtabstop=4
+set softtabstop=4 shiftwidth=4 tabstop=4
 
 " Backup
 set nobackup
@@ -58,10 +58,10 @@ nn <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nn <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 no <silent> <leader>X :bufdo bd<CR>
-no <silent> <leader>[ :bp<CR>
-no <silent> <leader>] :bn<CR>
-no <silent> <leader>{ :tabp<CR>
-no <silent> <leader>} :tabn<CR>
+no <silent> <leader>{ :bp<CR>
+no <silent> <leader>} :bn<CR>
+no <silent> <leader>[ :tabp<CR>
+no <silent> <leader>] :tabn<CR>
 no <silent> <leader>x :tabclose<CR>
 
 no <silent> <C-c> :Commands<CR>

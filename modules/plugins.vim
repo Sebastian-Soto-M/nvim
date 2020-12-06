@@ -15,14 +15,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'NLKNguyen/papercolor-theme'
-
+Plug 'bagrat/vim-buffet'
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
 
 " Search & Replace
 Plug 'tpope/vim-abolish' 

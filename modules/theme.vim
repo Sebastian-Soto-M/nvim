@@ -1,4 +1,4 @@
 colorscheme gruvbox
 set termguicolors
-set background=dark
 " highlight CursorLine guibg=#44475A
+hi HighlightedyankRegion term=bold ctermbg=0 guibg=#83a598

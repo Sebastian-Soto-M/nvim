@@ -1,12 +1,11 @@
-source $HOME/.config/nvim/modules/plugins.vim
-source $HOME/.config/nvim/modules/defaults.vim
-source $HOME/.config/nvim/modules/theme.vim
-source $HOME/.config/nvim/modules/light_line.vim
-
-source $HOME/.config/nvim/modules/coc_nvim_defaults.vim
-source $HOME/.config/nvim/modules/extensions.vim
-
-source $HOME/.config/nvim/modules/fzf.vim
-source $HOME/.config/nvim/modules/small_plugins.vim
-source $HOME/.config/nvim/modules/vimspector.vim
-source $HOME/.config/nvim/modules/hlnext.vim
+let path = stdpath('config')
+exec 'source' path . '$HOME/.config/nvim/modules/plugins.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/defaults.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/theme.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/light_line.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/coc_nvim_defaults.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/extensions.vim'
+" exec 'source' path . '$HOME/.config/nvim/modules/fzf.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/small_plugins.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/vimspector.vim'
+exec 'source' path . '$HOME/.config/nvim/modules/hlnext.vim'

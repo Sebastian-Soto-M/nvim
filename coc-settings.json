@@ -99,5 +99,8 @@
     "snippet": "",
     "text": "",
     "variable": ""
-  }
+  },
+
+  "yank.highlight.enable": true,
+  "yank.list.maxsize": 50
 }
