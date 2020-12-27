@@ -29,6 +29,8 @@ set foldmethod=syntax
 set nofoldenable
 set clipboard=unnamedplus
 
+au FileType css,javascript,python,sass,scss,typescript setlocal spell  spelllang=en_us
+
 " Search
 set hlsearch
 set ignorecase

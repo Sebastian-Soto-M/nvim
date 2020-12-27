@@ -21,6 +21,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'antoinemadec/coc-fzf'
+
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " Search & Replace
 Plug 'tpope/vim-abolish' 
@@ -55,6 +60,7 @@ Plug 'plasticboy/vim-markdown'
 
     " Typescript
 Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 
 " Development

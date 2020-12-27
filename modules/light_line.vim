@@ -1,7 +1,7 @@
 au User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 let g:lightline = {
-            \ 'colorscheme': 'gruvbox',
+            \ 'colorscheme': 'dracula',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste', 'coc_errors', 'coc_warnings', 'coc_ok' ],[ 'gitbranch' ],
             \             [ 'cocstatus', 'readonly', 'filename', 'modified', 'blame' ] ]
