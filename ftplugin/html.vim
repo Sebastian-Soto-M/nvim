@@ -1,1 +1,1 @@
-setlocal shiftwidth=4 tabstop=4
+setlocal shiftwidth=2 tabstop=2

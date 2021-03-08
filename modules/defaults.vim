@@ -116,5 +116,5 @@ function ToggleWrap()
     endif
 endfunction
 
-let g:python3_host_prog="/home/snsm/.config/virtualenvs/nvim/bin/python"
+let g:python3_host_prog="/home/snsm/.config/virtualenvs/neovim/bin/python"
 

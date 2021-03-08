@@ -44,3 +44,5 @@ let g:buffet_left_trunc_icon = "\uf0a8"
 let g:buffet_right_trunc_icon = "\uf0a9"
 
 let g:jsx_ext_required = 0
+
+nmap <silent> <leader>cp :!dragon-drag-and-drop -x %<CR>
