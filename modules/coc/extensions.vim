@@ -1,9 +1,6 @@
-            " \ 'coc-java',
-            " \ 'coc-java-debug',
 let g:coc_global_extensions = [
             \ 'coc-actions',
             \ 'coc-angular',
-            \ 'coc-bookmark',
             \ 'coc-css',
             \ 'coc-cssmodules',
             \ 'coc-emmet',
@@ -11,6 +8,8 @@ let g:coc_global_extensions = [
             \ 'coc-fzf-preview',
             \ 'coc-git',
             \ 'coc-html',
+            \ 'coc-java',
+            \ 'coc-java-debug',
             \ 'coc-json',
             \ 'coc-pairs',
             \ 'coc-prettier',
