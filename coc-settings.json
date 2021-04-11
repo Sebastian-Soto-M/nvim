@@ -34,8 +34,6 @@
     "v": "open:vsplit"
   },
 
-  "bookmark.sign": "",
-
   "html.autoClosingTags": true,
   "html.enable": true,
   "html.filetypes": ["html", "jinja", "jinja.html"],
@@ -79,6 +77,8 @@
   "prettier.disableLanguages": ["vue"],
   "prettier.printWidth": 80,
   "prettier.trailingComma": "all",
+
+  "python.jediPath": "/home/snsm/.config/virtualenvs/neovim/lib/python3.8/site-packages",
 
   "snippets.extends": {
     "html": ["jinja", "jinja.html"],
