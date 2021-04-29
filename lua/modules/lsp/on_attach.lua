@@ -1,4 +1,5 @@
 local K = require('modules.mappings._helper')
+local T = require('modules.mappings._telescope')
 local buf_map = require('utils').buf_map
 local buf_option = require('utils').buf_option
 

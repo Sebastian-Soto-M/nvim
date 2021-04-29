@@ -1,4 +1,5 @@
 local K = require('modules.mappings._helper')
+local T = require('plugins._telescope')
 
 local MOD = '<leader>h'
 
@@ -10,11 +11,15 @@ local function gitSignsCommand(key, cmd) K.run_lua(chord(key), gitSigns(cmd)) en
 K.run_lua(']c', gitSigns 'next_hunk')
 K.run_lua('[c', gitSigns 'prev_hunk')
 
+gitSignsCommand('R', 'reset_buffer')
+gitSignsCommand('b', 'blame_line')
+gitSignsCommand('b', 'git_branches')
+gitSignsCommand('cb', 'git_bcommits')
+gitSignsCommand('cc', 'git_commits')
+gitSignsCommand('p', 'preview_hunk')
+gitSignsCommand('r', 'reset_hunk')
+gitSignsCommand('s', 'git_status')
 gitSignsCommand('s', 'stage_hunk')
 gitSignsCommand('u', 'undo_stage_hunk')
-gitSignsCommand('r', 'reset_hunk')
-gitSignsCommand('R', 'reset_buffer')
-gitSignsCommand('p', 'preview_hunk')
-gitSignsCommand('b', 'blame_line')
 
 K.run_vim(MOD .. 'g', 'Neogit')
