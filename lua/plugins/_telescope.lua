@@ -108,7 +108,7 @@ local M = {
         require("telescope.builtin").current_buffer_fuzzy_find(no_preview())
     end,
 
-    buffers = function() require("telescope.builtin").buffers(no_preview()) end,
+    buffers = function() require("telescope.builtin").buffers(no_preview(W.slender)) end,
 
     command_history = function()
         require("telescope.builtin").command_history(no_preview())

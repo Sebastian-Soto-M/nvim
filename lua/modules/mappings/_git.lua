@@ -1,25 +1,36 @@
 local K = require('modules.mappings._helper')
-local T = require('plugins._telescope')
+local T = require('modules.mappings._telescope')
 
 local MOD = '<leader>h'
-
 local chord = function(key) return MOD .. key end
-local gitSigns = function(cmd) return 'require("gitsigns").' .. cmd .. '()' end
 
-local function gitSignsCommand(key, cmd) K.run_lua(chord(key), gitSigns(cmd)) end
+local G = {}
 
-K.run_lua(']c', gitSigns 'next_hunk')
-K.run_lua('[c', gitSigns 'prev_hunk')
+G.gitSigns = function(cmd) return 'require("gitsigns").' .. cmd .. '()' end
 
-gitSignsCommand('R', 'reset_buffer')
-gitSignsCommand('b', 'blame_line')
-gitSignsCommand('b', 'git_branches')
-gitSignsCommand('cb', 'git_bcommits')
-gitSignsCommand('cc', 'git_commits')
-gitSignsCommand('p', 'preview_hunk')
-gitSignsCommand('r', 'reset_hunk')
-gitSignsCommand('s', 'git_status')
-gitSignsCommand('s', 'stage_hunk')
-gitSignsCommand('u', 'undo_stage_hunk')
+G.gitSignsCommand =
+    function(key, cmd) K.run_lua(chord(key), G.gitSigns(cmd)) end
 
-K.run_vim(MOD .. 'g', 'Neogit')
+G.initialize_mappings = function()
+    K.run_lua(']c', G.gitSigns 'next_hunk')
+    K.run_lua('[c', G.gitSigns 'prev_hunk')
+    G.gitSignsCommand('R', 'reset_buffer')
+    G.gitSignsCommand('b', 'blame_line')
+    G.gitSignsCommand('b', 'git_branches')
+    G.gitSignsCommand('cb', 'git_bcommits')
+    G.gitSignsCommand('cc', 'git_commits')
+    G.gitSignsCommand('p', 'preview_hunk')
+    G.gitSignsCommand('r', 'reset_hunk')
+    G.gitSignsCommand('s', 'git_status')
+    G.gitSignsCommand('S', 'stage_hunk')
+    G.gitSignsCommand('u', 'undo_stage_hunk')
+
+    K.run_vim(MOD .. 'g', 'Neogit')
+
+    K.run_lua(chord('s'), T.telescope('git_status'))
+    K.run_lua(chord('cb'), T.telescope('git_bcommits'))
+    K.run_lua(chord('cc'), T.telescope('git_commits'))
+    K.run_lua(chord('b'), T.telescope('git_branches'))
+end
+
+return G
