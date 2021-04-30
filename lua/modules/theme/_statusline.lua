@@ -1,17 +1,5 @@
 local gl = require('galaxyline')
-local colors = { -- Colors
-  bg = '#21222C',
-  fg = '#F8F8F2',
-  section_bg = '#282A36',
-  yellow = '#F4F99D',
-  cyan = '#9AEDFE',
-  green = '#50FA7B',
-  orange = '#FFB86C',
-  blue = '#BD93F9',
-  magenta = '#FF79C6',
-  red = '#FF5555'
-  
-}
+local colors = require('modules.theme.colors').dracula
 
 local condition = require('galaxyline.condition')
 local gls = gl.section
@@ -24,15 +12,10 @@ local function has_width_gt(cols)
     -- Check if the windows width is greater than a given number of columns
     return vim.fn.winwidth(0) / 2 > cols
 end
-    
-local checkMediumWidth = function()
-    return has_width_gt(40)
-end
 
-    
-local checkSmallWidth = function()
-    return has_width_gt(35)
-end
+local checkMediumWidth = function() return has_width_gt(40) end
+
+local checkSmallWidth = function() return has_width_gt(35) end
 
 local mode_color = function()
     local mode_colors = {
@@ -75,11 +58,7 @@ gls.left[1] = {
     }
 }
 
-gls.left[2] = {
-    Whitespace = {
-        provider = function() return ' ' end,
-    }
-}
+gls.left[2] = {Whitespace = {provider = function() return ' ' end}}
 
 gls.left[3] = {
     FileSize = {
@@ -95,7 +74,7 @@ gls.left[4] = {
     LineInfo = {
         condition = condition.buffer_not_empty and checkSmallWidth,
         highlight = {colors.fg, colors.bg},
-        provider = 'LineColumn',
+        provider = 'LineColumn'
     }
 }
 
@@ -113,7 +92,7 @@ gls.left[5] = {
 gls.left[6] = {
     FileName = {
         condition = condition.buffer_not_empty,
-        highlight = {colors.magenta, colors.bg },
+        highlight = {colors.magenta, colors.bg},
         provider = {'FileName'}
     }
 }
