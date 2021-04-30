@@ -1,5 +1,6 @@
 local K = require('modules.mappings._helper')
 local T = require('modules.mappings._telescope')
+local S = require('modules.mappings._lspsaga')
 local buf_map = require('utils').buf_map
 local buf_option = require('utils').buf_option
 
@@ -9,10 +10,9 @@ local function on_attach(client)
     if type == 'jdtls' then
         K.run_lua_buf('n', 'ga', "require('jdtls').code_action()")
     else
-        K.run_lua_buf('n', 'ga', T.telescope('lsp_code_actions'))
+        S.lsp.code_actions('ga')
     end
 
-    K.run_lua_buf('i', '<C-k>', 'vim.lsp.buf.signature_help()')
 
     buf_map('i', '<S-Tab>', "pumvisible() ? '<C-p>' : '<S-Tab>'",
             {expr = true, noremap = true})
@@ -26,17 +26,22 @@ local function on_attach(client)
     K.run_lua_buf('n', '<leader>wl', 'print(vim.inspect(vim.lsp.buf.list_workspace_folders()))')
     K.run_lua_buf('n', '<leader>wr', 'vim.lsp.buf.remove_workspace_folder()')
     K.run_lua_buf('n', '<space>rn', 'vim.lsp.buf.rename()')
-    K.run_lua_buf('n', 'K', 'vim.lsp.buf.hover()')
     K.run_lua_buf('n', '[d', 'vim.lsp.diagnostic.goto_prev()')
     K.run_lua_buf('n', ']d', 'vim.lsp.diagnostic.goto_next()')
     K.run_lua_buf('n', 'gD', 'vim.lsp.buf.declaration()')
-    K.run_lua_buf('n', 'gd', 'vim.lsp.buf.definition()')
     K.run_lua_buf('n', 'gi', 'vim.lsp.buf.implementation()')
-    K.run_lua_buf('n', '<leader>dd', T.telescope('lsp_document_diagnostics'))
-    K.run_lua_buf('n', '<leader>ds', T.telescope('lsp_document_symbols'))
-    K.run_lua_buf('n', '<leader>wd', T.telescope('lsp_workspace_diagnostics'))
-    K.run_lua_buf('n', '<leader>ws', T.telescope('lsp_workspace_symbols'))
-    K.run_lua_buf('n', 'gr', T.telescope('lsp_references'))
+    K.run_lua_buf('n', 'gtd', 'vim.lsp.buf.definition()') -- go to definition
+    -- K.run_lua_buf('n', 'K', 'vim.lsp.buf.hover()')
+    S.lsp.hover_doc('K', '<c-f>', '<c-b>',1)
+    S.lsp.preview_definition('gd') -- get definition
+    S.lsp.rename('<F2>')
+    S.lsp.signature_help('<C-k>')
+    T.lsp.document_diagnostics('<leader>dd')
+    T.lsp.document_symbols('<leader>ds')
+    T.lsp.references('gr')
+    T.lsp.workspace_diagnostics('<leader>wd')
+    T.lsp.workspace_symbols('<leader>ws')
+
 end
 
 return on_attach
