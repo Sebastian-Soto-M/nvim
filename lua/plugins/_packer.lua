@@ -81,16 +81,6 @@ return require('packer').startup(function(use)
         {'mhartington/formatter.nvim', opt = true, cmd = 'Format'},
         {'jose-elias-alvarez/nvim-lsp-ts-utils', opt = false}, -- typescript
         {'mfussenegger/nvim-jdtls', opt = false}, -- java
-        {
-            "folke/lsp-trouble.nvim",
-            config = function()
-                require("trouble").setup {
-                    auto_close = true,
-                    signs = {},
-                    use_lsp_diagnostic_signs = true
-                }
-            end
-        }
     }
 
     -- Snippets

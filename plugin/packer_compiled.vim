@@ -255,6 +255,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/telescope-frecency.nvim"
   },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+  },
   ["telescope-project.nvim"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/telescope-project.nvim"
@@ -362,10 +366,10 @@ time("Defining packer_plugins", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file GitMessenger lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessenger", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Format lua require("packer.load")({'formatter.nvim'}, { cmd = "Format", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file GitMessenger lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessenger", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time("Defining lazy-load commands", false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -376,7 +380,7 @@ vim.cmd [[au FileType cls ++once lua require("packer.load")({'vimtex'}, { ft = "
 vim.cmd [[au FileType dtx ++once lua require("packer.load")({'vimtex'}, { ft = "dtx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType text ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode'}, { ft = "text" }, _G.packer_plugins)]]
 vim.cmd [[au FileType brf ++once lua require("packer.load")({'vimtex'}, { ft = "brf" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'goyo.vim', 'vim-table-mode'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType blg ++once lua require("packer.load")({'vimtex'}, { ft = "blg" }, _G.packer_plugins)]]
 vim.cmd [[au FileType fd ++once lua require("packer.load")({'vimtex'}, { ft = "fd" }, _G.packer_plugins)]]
 vim.cmd [[au FileType aux ++once lua require("packer.load")({'vimtex'}, { ft = "aux" }, _G.packer_plugins)]]
@@ -384,12 +388,12 @@ vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "
 time("Defining lazy-load filetype autocommands", false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", true)
-vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", false)
 time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", true)
 vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
 time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", false)
+time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", true)
+vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
+time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

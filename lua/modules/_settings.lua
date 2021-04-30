@@ -9,6 +9,7 @@ local indent = 4
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'set shortmess+=c'
+vim.cmd 'set spell spelllang=en_us'
 -- Sane defaults
 opt('o', 'showmode', false) -- Don't show the mode
 opt('w', 'number', true) -- Print line number
