@@ -83,7 +83,7 @@ require('telescope').setup({
 pcall(require("telescope").load_extension, "fzy_native") -- superfast sorter
 pcall(require("telescope").load_extension, "frecency") -- frecency
 
-local W = {slender = 0.4, narrow = 0.6, wide = 0.8}
+local W = {slender = 0.3, narrow = 0.5, wide = 0.8}
 
 local no_preview = function(width)
     return require("telescope.themes").get_dropdown(
@@ -111,7 +111,7 @@ local M = {
     buffers = function() require("telescope.builtin").buffers(no_preview(W.slender)) end,
 
     command_history = function()
-        require("telescope.builtin").command_history(no_preview())
+        require("telescope.builtin").command_history(no_preview(W.narrow))
     end,
 
     commands = function() require("telescope.builtin").commands(no_preview()) end,
@@ -122,7 +122,7 @@ local M = {
     end,
 
     frecency = function()
-        require("telescope").extensions.frecency.frecency(no_preview())
+        require("telescope").extensions.frecency.frecency()
     end,
 
     git_bcommits = function()
@@ -130,7 +130,7 @@ local M = {
     end,
 
     git_branches = function()
-        require("telescope.builtin").git_branches(no_preview())
+        require("telescope.builtin").git_branches(no_preview(W.slender))
     end,
 
     git_commits = function()
@@ -138,11 +138,11 @@ local M = {
     end,
 
     git_status = function()
-        require("telescope.builtin").git_status(no_preview())
+        require("telescope.builtin").git_status()
     end,
 
     help_tags = function()
-        require("telescope.builtin").help_tags(no_preview())
+        require("telescope.builtin").help_tags()
     end,
 
     keymaps = function() require("telescope.builtin").keymaps(no_preview()) end,
@@ -189,10 +189,12 @@ local M = {
     end,
 
     spell_suggest = function()
-        require("telescope.builtin").spell_suggest(no_preview())
+        require("telescope.builtin").spell_suggest(no_preview(W.slender))
     end,
 
-    tags = function() require("telescope.builtin").tags(no_preview()) end
+    tags = function() require("telescope.builtin").tags(no_preview()) end,
+
+    vim_options = function () require('telescope.builtin').vim_options() end
 }
 
 local finders = require("telescope.finders")
