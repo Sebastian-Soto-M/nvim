@@ -7,19 +7,19 @@ local function get_set_keymap_fun(env,...)
     if env == C.env.buffer then return vim.api.nvim_buf_set_keymap(bufnr, ...) end
     return vim.api.nvim_set_keymap(...)
 end
--- | String value           | Help page     | Affected modes                           | Vimscript equivalent |
--- | ---------------------- | ------------- | ---------------------------------------- | -------------------- |
--- | `''` (an empty string) | `mapmode-nvo` | Normal, Visual, Select, Operator-pending | `:map`               |
--- | `'n'`                  | `mapmode-n`   | Normal                                   | `:nmap`              |
--- | `'v'`                  | `mapmode-v`   | Visual and Select                        | `:vmap`              |
--- | `'s'`                  | `mapmode-s`   | Select                                   | `:smap`              |
--- | `'x'`                  | `mapmode-x`   | Visual                                   | `:xmap`              |
--- | `'o'`                  | `mapmode-o`   | Operator-pending                         | `:omap`              |
--- | `'!'`                  | `mapmode-ic`  | Insert and Command-line                  | `:map!`              |
--- | `'i'`                  | `mapmode-i`   | Insert                                   | `:imap`              |
--- | `'l'`                  | `mapmode-l`   | Insert, Command-line, Lang-Arg           | `:lmap`              |
--- | `'c'`                  | `mapmode-c`   | Command-line                             | `:cmap`              |
--- | `'t'`                  | `mapmode-t`   | Terminal                                 | `:tmap`              |
+-- | String value | Help page     | Affected modes                           | Vimscript equivalent |
+-- | -----------: | ------------- | ---------------------------------------- | ---------------------|
+-- | `''`         | `mapmode-nvo` | Normal, Visual, Select, Operator-pending | `:map`               |
+-- | `'n'`        | `mapmode-n`   | Normal                                   | `:nmap`              |
+-- | `'v'`        | `mapmode-v`   | Visual and Select                        | `:vmap`              |
+-- | `'s'`        | `mapmode-s`   | Select                                   | `:smap`              |
+-- | `'x'`        | `mapmode-x`   | Visual                                   | `:xmap`              |
+-- | `'o'`        | `mapmode-o`   | Operator-pending                         | `:omap`              |
+-- | `'!'`        | `mapmode-ic`  | Insert and Command-line                  | `:map!`              |
+-- | `'i'`        | `mapmode-i`   | Insert                                   | `:imap`              |
+-- | `'l'`        | `mapmode-l`   | Insert, Command-line, Lang-Arg           | `:lmap`              |
+-- | `'c'`        | `mapmode-c`   | Command-line                             | `:cmap`              |
+-- | `'t'`        | `mapmode-t`   | Terminal                                 | `:tmap`              |
 local function map(mode, keys, action, opts, env)
     local options = {noremap = true}
     if opts then options = vim.tbl_extend('force', options, opts) end

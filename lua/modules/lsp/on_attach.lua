@@ -31,8 +31,8 @@ local function on_attach(client)
     K.run_lua_buf('n', 'gD', 'vim.lsp.buf.declaration()')
     K.run_lua_buf('n', 'gi', 'vim.lsp.buf.implementation()')
     K.run_lua_buf('n', 'gtd', 'vim.lsp.buf.definition()') -- go to definition
-    -- K.run_lua_buf('n', 'K', 'vim.lsp.buf.hover()')
-    S.lsp.hover_doc('K', '<c-f>', '<c-b>',1)
+    K.run_lua_buf('n', 'K', 'vim.lsp.buf.hover()')
+    -- S.lsp.hover_doc('K', '<c-f>', '<c-b>',1)
     S.lsp.preview_definition('gd') -- get definition
     S.lsp.rename('<F2>')
     S.lsp.signature_help('<C-k>')

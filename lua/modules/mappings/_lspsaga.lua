@@ -44,4 +44,8 @@ S.lsp = {
     end
 }
 
+S.initialize_mappings = function ()
+    S.lsp.lsp_finder('<leader>fl')
+end
+
 return S
