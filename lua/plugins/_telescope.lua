@@ -145,7 +145,7 @@ local M = {
         require("telescope.builtin").help_tags()
     end,
 
-    keymaps = function() require("telescope.builtin").keymaps(no_preview()) end,
+    keymaps = function() require("telescope.builtin").keymaps(no_preview(W.slender)) end,
 
     live_grep = function()
         require("telescope.builtin").grep_string(
@@ -157,7 +157,7 @@ local M = {
     end,
 
     lsp_document_diagnostics = function()
-        require("telescope.builtin").lsp_document_diagnostics(no_preview())
+        require("telescope.builtin").lsp_document_diagnostics()
     end,
 
     lsp_document_symbols = function()
@@ -169,7 +169,7 @@ local M = {
     end,
 
     lsp_workspace_diagnostics = function()
-        require("telescope.builtin").lsp_workspace_diagnostics(no_preview())
+        require("telescope.builtin").lsp_workspace_diagnostics()
     end,
 
     lsp_workspace_symbols = function()
