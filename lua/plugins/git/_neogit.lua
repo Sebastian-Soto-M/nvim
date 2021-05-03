@@ -1,4 +1,5 @@
 local neogit = require('neogit')
+local arrows = require('modules.theme.icons').arrows
 
 -- | Keybinding   | Function                                         |
 -- |--------------|--------------------------------------------------|
@@ -27,8 +28,8 @@ neogit.setup {
     -- customize displayed signs
     signs = {
         -- { CLOSED, OPENED }
-        section = {"", ""},
-        item = {"", ""},
+        section = {arrows.right, arrows.down},
+        item = {arrows.right, arrows.down},
         hunk = {"", ""}
     }
 }

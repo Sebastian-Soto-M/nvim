@@ -1,3 +1,4 @@
+local U = require('utils')
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 
 local function opt(scope, key, value)
@@ -53,7 +54,8 @@ opt('o', 'ignorecase', true) -- Ignore case
 opt('o', 'incsearch', true) -- Ignore case
 
 opt('o', 'completeopt', 'menuone,noinsert,noselect') -- Completion options (for deoplete)
--- opt('o', 'hidden', true) -- Enable modified buffers in background
--- opt('o', 'joinspaces', false) -- No double spaces with join after a dot
--- opt('w', 'list', true) -- Show some invisible characters (tabs...)
--- opt('w', 'wrap', false)
+
+local globals = {
+   context_enabled = 0,
+}
+U.apply_globals(globals)
