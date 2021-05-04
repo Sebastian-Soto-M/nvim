@@ -24,6 +24,8 @@ opt('o', 'scrolloff', 5) -- Lines of context
 opt('o', 'sidescrolloff', 10) -- Columns of context
 opt('o', 'shiftround', true) -- Round indent
 opt('o', 'hidden', true) -- Round indent
+opt('o', 'timeout', true) -- Timeout
+opt('o', 'timeoutlen', 500) -- Timeout length
 
 -- Tabs & Spaces
 opt('b', 'expandtab', true) -- Use spaces instead of tabs

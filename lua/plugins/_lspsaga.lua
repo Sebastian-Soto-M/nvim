@@ -88,7 +88,6 @@ S.initialize_colors = function()
     set_colors('LspSagaAutoPreview', colors.magenta, colors.yellow)
     set_colors('LspSagaDefPreviewBorder', colors.magenta, colors.yellow)
     set_colors('LspLinesDiagBorder', colors.magenta, colors.yellow)
-    print('ran all commands')
 end
 
 return S
