@@ -14,8 +14,6 @@ K.term('jk', '<C-\\><C-n>')
 
 -- SMALL PLUGIN DEFAULTS
 K.run_lua('<leader>wh', 'require("hop").hint_words()')
-K.run_lua('z=', T.telescope('spell_suggest'))
-K.run_lua('q:', T.telescope('command_history'))
 -- K.insert('n', '<C-w><C-o>', ':MaximizerToggle!<CR>')
 -- K.insert('t', '<C-w><C-o>', '<C-\\><C-n> :MaximizerToggle!<CR>')
 K.run_vim('<leader>sw', 'CtrlSF')

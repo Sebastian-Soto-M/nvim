@@ -137,6 +137,10 @@ local M = {
         require("telescope.builtin").git_commits(no_preview())
     end,
 
+    git_files = function()
+        require("telescope.builtin").git_files()
+    end,
+
     git_status = function()
         require("telescope.builtin").git_status()
     end,
