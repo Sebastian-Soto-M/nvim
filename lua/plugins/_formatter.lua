@@ -41,6 +41,15 @@ require('formatter').setup({
                 }
             end
         },
+        lua = {
+            function()
+                return {
+                    exe = "lua-format",
+                    args = {vim.api.nvim_buf_get_name(0)},
+                    stdin = true
+                }
+            end
+        },
         sass = {prettier},
         scss = {prettier},
         typescript = {prettier},
@@ -59,6 +68,6 @@ require('formatter').setup({
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.css,*.graphql,*.html,*.js,*.json,*.jsx,*.md,*.mjs,*.py,*.rs,*.scss,*.ts,*.tsx,*.yaml FormatWrite
+  autocmd BufWritePost *.css,*.graphql,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.mjs,*.py,*.rs,*.scss,*.ts,*.tsx,*.yaml FormatWrite
 augroup END
 ]], true)

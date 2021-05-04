@@ -61,7 +61,7 @@ Below you can see the configurations I currently have working
 - [ ] css
 - [ ] html
 - [ ] json
-- [ ] lua
+- [x] lua
 - [ ] rust
 - [ ] sql
 - [x] tsserver
@@ -80,7 +80,7 @@ Below you can see the configurations I currently have working
 - [ ] java
 - [x] javascript
 - [x] json
-- [ ] lua
+- [x] lua
 - [x] markdown
 - [x] python
 - [x] sass

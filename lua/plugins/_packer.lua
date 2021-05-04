@@ -78,9 +78,13 @@ return require('packer').startup(function(use)
         'glepnir/lspsaga.nvim', -- code definitions and references popup
         'neovim/nvim-lspconfig', 'onsails/lspkind-nvim', -- icons to lsp suggestion hrsh7th/nvim-compes
         'ray-x/lsp_signature.nvim', 'tjdevries/nlua.nvim', -- lua 
-        {'mhartington/formatter.nvim', opt = true, cmd = 'Format'},
-        {'jose-elias-alvarez/nvim-lsp-ts-utils', opt = false}, -- typescript
-        {'mfussenegger/nvim-jdtls', opt = false}, -- java
+        {
+            'mhartington/formatter.nvim',
+            opt = true,
+            cmd = 'Format',
+            requires = {'andrejlevkovitch/vim-lua-format'}
+        }, {'jose-elias-alvarez/nvim-lsp-ts-utils', opt = false}, -- typescript
+        {'mfussenegger/nvim-jdtls', opt = false} -- java
     }
 
     -- Snippets

@@ -94,6 +94,7 @@ _G.packer_plugins = {
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
   ["formatter.nvim"] = {
+    after = { "vim-lua-format" },
     commands = { "Format" },
     loaded = false,
     needs_bufread = false,
@@ -295,6 +296,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-indent-object"
   },
+  ["vim-lua-format"] = {
+    load_after = {
+      ["formatter.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vim-lua-format"
+  },
   ["vim-markdown"] = {
     loaded = false,
     needs_bufread = true,
@@ -378,9 +387,9 @@ vim.cmd [[au!]]
 time("Defining lazy-load filetype autocommands", true)
 vim.cmd [[au FileType cls ++once lua require("packer.load")({'vimtex'}, { ft = "cls" }, _G.packer_plugins)]]
 vim.cmd [[au FileType dtx ++once lua require("packer.load")({'vimtex'}, { ft = "dtx" }, _G.packer_plugins)]]
-vim.cmd [[au FileType text ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode'}, { ft = "text" }, _G.packer_plugins)]]
+vim.cmd [[au FileType text ++once lua require("packer.load")({'vim-table-mode', 'goyo.vim'}, { ft = "text" }, _G.packer_plugins)]]
 vim.cmd [[au FileType brf ++once lua require("packer.load")({'vimtex'}, { ft = "brf" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'goyo.vim', 'vim-table-mode'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-table-mode', 'vim-markdown', 'goyo.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType blg ++once lua require("packer.load")({'vimtex'}, { ft = "blg" }, _G.packer_plugins)]]
 vim.cmd [[au FileType fd ++once lua require("packer.load")({'vimtex'}, { ft = "fd" }, _G.packer_plugins)]]
 vim.cmd [[au FileType aux ++once lua require("packer.load")({'vimtex'}, { ft = "aux" }, _G.packer_plugins)]]
