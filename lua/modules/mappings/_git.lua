@@ -1,37 +1,44 @@
 local K = require('modules.mappings._helper')
 local T = require('modules.mappings._telescope')
 
-local MOD = '<leader>h'
-local chord = function(key) return MOD .. key end
-
 local G = {}
 
-G.gitSigns = function(cmd) return 'require("gitsigns").' .. cmd .. '()' end
+G = {
+    MOD = 'h',
+    chord = function(key) return '<leader>' .. G.MOD .. key end,
+    gitSigns = function(cmd) return 'require("gitsigns").' .. cmd .. '()' end,
 
-G.gitSignsCommand =
-    function(key, cmd) K.run_lua(chord(key), G.gitSigns(cmd)) end
+    blame_line = function(keys) K.run_lua(keys, G.gitSigns('blame_line')) end,
+    dashboard = function(keys) K.run_vim(keys, 'Neogit') end,
+    diff = function(keys) K.run_vim(keys, 'Gdiff') end,
+    hunk = {
+        next = function(keys) K.run_lua(keys, G.gitSigns('next_hunk')) end,
+        prev = function(keys) K.run_lua(keys, G.gitSigns('prev_hunk')) end,
+        preview = function(keys)
+            K.run_lua(keys, G.gitSigns('preview_hunk'))
+        end,
+        reset = function(keys) K.run_lua(keys, G.gitSigns('reset_hunk')) end,
+        stage = function(keys) K.run_lua(keys, G.gitSigns('stage_hunk')) end,
+        undo = function(keys) K.run_lua(keys, G.gitSigns('undo_hunk')) end
+    },
+    reset_buffer = function(keys) K.run_lua(keys, G.gitSigns('reset_buffer')) end
+}
 
 G.initialize_mappings = function()
-    K.run_lua(']c', G.gitSigns 'next_hunk')
-    K.run_lua('[c', G.gitSigns 'prev_hunk')
-    G.gitSignsCommand('R', 'reset_buffer')
-    G.gitSignsCommand('B', 'blame_line')
-    G.gitSignsCommand('b', 'git_branches')
-    G.gitSignsCommand('cb', 'git_bcommits')
-    G.gitSignsCommand('cc', 'git_commits')
-    G.gitSignsCommand('p', 'preview_hunk')
-    G.gitSignsCommand('r', 'reset_hunk')
-    G.gitSignsCommand('s', 'git_status')
-    G.gitSignsCommand('S', 'stage_hunk')
-    G.gitSignsCommand('u', 'undo_stage_hunk')
-    K.run_vim(chord('d'), 'Gdiff')
-
-    K.run_vim(MOD .. 'g', 'Neogit')
-
-    K.run_lua(chord('s'), T.telescope('git_status'))
-    K.run_lua(chord('cb'), T.telescope('git_bcommits'))
-    K.run_lua(chord('cc'), T.telescope('git_commits'))
-    K.run_lua(chord('b'), T.telescope('git_branches'))
+    G.blame_line(G.chord('B'))
+    G.dashboard(G.chord('g'))
+    G.diff(G.chord('d'))
+    G.hunk.next(']c')
+    G.hunk.prev('[c')
+    G.hunk.preview(G.chord('p'))
+    G.hunk.reset(G.chord('r'))
+    G.hunk.stage(G.chord('S'))
+    G.hunk.undo(G.chord('u'))
+    G.reset_buffer(G.chord('R'))
+    T.git.bcommits(G.chord('cb'))
+    T.git.branches(G.chord('b'))
+    T.git.commits(G.chord('cc'))
+    T.git.status(G.chord('s'))
 end
 
 return G
