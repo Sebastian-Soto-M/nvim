@@ -21,7 +21,7 @@ local function on_attach(client)
 
     K.run_lua_buf('n', '<leader>D', 'vim.lsp.buf.type_definition()')
     K.run_lua_buf('n', '<leader>d', 'vim.lsp.diagnostic.show_line_diagnostics({ show_header = false })')
-    K.run_lua_buf('n', '<leader>k', 'vim.lsp.buf.signature_help()')
+    -- K.run_lua_buf('n', '<leader>k', 'vim.lsp.buf.signature_help()')
     K.run_lua_buf('n', '<leader>wa', 'vim.lsp.buf.add_workspace_folder()')
     K.run_lua_buf('n', '<leader>wl', 'print(vim.inspect(vim.lsp.buf.list_workspace_folders()))')
     K.run_lua_buf('n', '<leader>wr', 'vim.lsp.buf.remove_workspace_folder()')
@@ -30,12 +30,11 @@ local function on_attach(client)
     K.run_lua_buf('n', ']d', 'vim.lsp.diagnostic.goto_next()')
     K.run_lua_buf('n', 'gD', 'vim.lsp.buf.declaration()')
     K.run_lua_buf('n', 'gi', 'vim.lsp.buf.implementation()')
-    K.run_lua_buf('n', 'gtd', 'vim.lsp.buf.definition()') -- go to definition
+    K.run_lua_buf('n', 'gd', 'vim.lsp.buf.definition()') -- go to definition
     K.run_lua_buf('n', 'K', 'vim.lsp.buf.hover()')
-    -- S.lsp.hover_doc('K', '<c-f>', '<c-b>',1)
-    S.lsp.preview_definition('gd') -- get definition
+    S.lsp.hover_doc('K', '<c-f>', '<c-b>',1)
+    S.lsp.preview_definition('gpd') -- get definition
     S.lsp.rename('<F2>')
-    S.lsp.signature_help('<C-k>')
     T.lsp.document_diagnostics('<leader>dd')
     T.lsp.document_symbols('<leader>ds')
     T.lsp.references('gr')

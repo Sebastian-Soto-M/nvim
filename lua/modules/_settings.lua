@@ -57,5 +57,6 @@ opt('o', 'completeopt', 'menuone,noinsert,noselect') -- Completion options (for 
 
 local globals = {
    context_enabled = 0,
+   ctrlsf_auto_preview = 1
 }
 U.apply_globals(globals)

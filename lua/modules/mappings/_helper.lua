@@ -26,11 +26,16 @@ local function map(mode, keys, action, opts, env)
     get_set_keymap_fun(env, mode, keys, action, options)
 end
 
-local function run_cmd(mode, keys, action, env, lang)
-    local options = {noremap = true, silent = true}
+local function run_cmd(mode, keys, action, env, lang, enter)
+    local options = {noremap = true, silent = false}
     local prefix = ":"
     if lang == C.lang.lua then prefix = prefix .. "lua " end
-    get_set_keymap_fun(env, mode, keys, prefix .. action .. '<CR>', options)
+    action = prefix .. action
+    if enter == nil then 
+        action = action .. '<CR>'
+        options.silent = true
+    end
+    get_set_keymap_fun(env, mode, keys, action, options)
 end
 
 function K.term(keys, action, opts) map('t', keys, action, opts, C.env.global) end
@@ -38,11 +43,11 @@ function K.normal(keys, action, opts) map('n', keys, action, opts, C.env.global)
 function K.insert(keys, action, opts) map('i', keys, action, opts, C.env.global) end
 function K.visual(keys, action, opts) map('v', keys, action, opts, C.env.global) end
 
-function K.run_lua(keys, action)
-    run_cmd('n', keys, action, C.env.global, C.lang.lua)
+function K.run_lua(keys, action, enter)
+    run_cmd('n', keys, action, C.env.global, C.lang.lua, enter)
 end
-function K.run_vim(keys, action)
-    run_cmd('n', keys, action, C.env.global, C.lang.vim)
+function K.run_vim(keys, action, enter)
+    run_cmd('n', keys, action, C.env.global, C.lang.vim, enter)
 end
 
 function K.run_vim_buf(mode, keys, action)
