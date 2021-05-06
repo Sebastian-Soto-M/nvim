@@ -86,5 +86,6 @@ Below you can see the configurations I currently have working
 - [x] sass
 - [x] scss
 - [ ] shell script
+- [ ] sql
 - [x] typescript
 - [x] yaml

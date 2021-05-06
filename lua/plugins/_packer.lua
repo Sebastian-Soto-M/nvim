@@ -90,7 +90,8 @@ return require('packer').startup(function(use)
     -- Snippets
     use {
         'hrsh7th/nvim-compe', 'hrsh7th/vim-vsnip', 'cstrap/python-snippets',
-        'ylcnfrht/vscode-python-snippet-pack', 'xabikos/vscode-javascript'
+        'ylcnfrht/vscode-python-snippet-pack', 'xabikos/vscode-javascript',
+        'mattn/emmet-vim'
     }
 
     -- Project

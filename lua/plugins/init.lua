@@ -6,3 +6,4 @@ require('plugins._lspkind')
 require('plugins._lspsaga').init()
 require('plugins._telescope')
 require('plugins.git')
+
