@@ -1,29 +1,36 @@
 local I = {
-    arrows = {
-        left = '',
-        right = '',
-        down = '',
-    },
+    files = {symlink = '', default = ''},
+    arrows = {left = '', right = '', down = ''},
     diagnostics = {
         warning = '',
         error = '',
         hint = '',
         info = '',
-        prefix = '●',
+        prefix = '●'
     },
-    separators = {
-        up = '',
-        down = '',
-    },
+    separators = {up = '', down = ''},
     git = {
         symbol = '',
         delete = 'ﮁ',
         add = '',
-        change = 'ﯽ'
+        change = 'ﯽ',
+        ignored = "",
+        renamed = "➜",
+        unmerged = "",
+        unstaged = "ﮖ",
+        untracked = "ﮗ"
     },
     pipe = '┃',
     bug = '',
-    light_bulb ='',
-    edit = ''
+    light_bulb = '',
+    edit = '',
+    tree = {
+        default = "",
+        open = "",
+        empty = "",
+        empty_open = "",
+        symlink = "",
+        symlink_open = ""
+    }
 }
 return I

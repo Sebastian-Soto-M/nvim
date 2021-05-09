@@ -157,10 +157,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/neogit"
   },
-  ["nlua.nvim"] = {
-    loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nlua.nvim"
-  },
   ["nvim-bufferline.lua"] = {
     loaded = false,
     needs_bufread = false,
@@ -191,9 +187,8 @@ _G.packer_plugins = {
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-peekup"
   },
   ["nvim-tree.lua"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -220,6 +215,7 @@ _G.packer_plugins = {
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
+    config = { "\27LJ\2\2C\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\22nvim-web-devicons\frequire\0" },
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
@@ -356,10 +352,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
-  ["vim-which-key"] = {
-    loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-which-key"
-  },
   vimtex = {
     loaded = false,
     needs_bufread = true,
@@ -376,6 +368,10 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
+-- Config for: nvim-web-devicons
+time("Config for nvim-web-devicons", true)
+try_loadstring("\27LJ\2\2C\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
+time("Config for nvim-web-devicons", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)

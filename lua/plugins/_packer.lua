@@ -4,6 +4,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- To handle Lua configuration
     use {'wbthomason/packer.nvim', 'tami5/sql.nvim'}
+    use {'kyazdani42/nvim-web-devicons', opt = false}
+    use 'kyazdani42/nvim-tree.lua'
 
     -- Development
     use {
@@ -50,12 +52,10 @@ return require('packer').startup(function(use)
         'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
         'Yggdroot/indentLine', 'wellle/context.vim', -- Shows the function name you are working on
         'gennaro-tedesco/nvim-peekup', -- view register contents
-        'liuchengxu/vim-which-key', 'norcalli/nvim-colorizer.lua', -- colored hex codes
+        'norcalli/nvim-colorizer.lua', -- colored hex codes
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
-        {'kyazdani42/nvim-tree.lua', opt = true},
-        {'kyazdani42/nvim-web-devicons', opt = false},
         {'morhetz/gruvbox', disable = false, opt = true}, 'szw/vim-maximizer' -- Toggle size of split windows
     }
 
