@@ -173,7 +173,7 @@ local M = {
     end,
 
     lsp_workspace_symbols = function()
-        require("telescope.builtin").lsp_workspace_symbols(no_preview())
+        require("telescope.builtin").lsp_workspace_symbols()
     end,
 
     marks = function() require("telescope.builtin").marks(no_preview()) end,

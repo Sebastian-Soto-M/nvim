@@ -35,6 +35,7 @@ require('formatter').setup({
                     exe = "autopep8",
                     args = {
                         "-a", "--max-line-length", 80,
+                        "--ignore", "E731",
                         vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true
