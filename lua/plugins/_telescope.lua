@@ -108,7 +108,9 @@ local M = {
         require("telescope.builtin").current_buffer_fuzzy_find(no_preview())
     end,
 
-    buffers = function() require("telescope.builtin").buffers(no_preview(W.slender)) end,
+    buffers = function()
+        require("telescope.builtin").buffers(no_preview(W.slender))
+    end,
 
     command_history = function()
         require("telescope.builtin").command_history(no_preview(W.narrow))
@@ -121,9 +123,7 @@ local M = {
             {file_ignore_patterns = {"%.png", "%.jpg", "%.webp"}})
     end,
 
-    frecency = function()
-        require("telescope").extensions.frecency.frecency()
-    end,
+    frecency = function() require("telescope").extensions.frecency.frecency() end,
 
     git_bcommits = function()
         require("telescope.builtin").git_bcommits(no_preview())
@@ -137,19 +137,15 @@ local M = {
         require("telescope.builtin").git_commits(no_preview())
     end,
 
-    git_files = function()
-        require("telescope.builtin").git_files()
-    end,
+    git_files = function() require("telescope.builtin").git_files() end,
 
-    git_status = function()
-        require("telescope.builtin").git_status()
-    end,
+    git_status = function() require("telescope.builtin").git_status() end,
 
-    help_tags = function()
-        require("telescope.builtin").help_tags()
-    end,
+    help_tags = function() require("telescope.builtin").help_tags() end,
 
-    keymaps = function() require("telescope.builtin").keymaps(no_preview(W.slender)) end,
+    keymaps = function()
+        require("telescope.builtin").keymaps(no_preview(W.slender))
+    end,
 
     live_grep = function()
         require("telescope.builtin").grep_string(
@@ -198,7 +194,7 @@ local M = {
 
     tags = function() require("telescope.builtin").tags(no_preview()) end,
 
-    vim_options = function () require('telescope.builtin').vim_options() end
+    vim_options = function() require('telescope.builtin').vim_options() end
 }
 
 local finders = require("telescope.finders")

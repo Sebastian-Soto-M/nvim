@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
     use {
         'tpope/vim-dispatch', 'machakann/vim-sandwich', 'tpope/vim-unimpaired',
         'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
-        'editorconfig/editorconfig-vim', 'dyng/ctrlsf.vim', -- edit search matches in multiple files 
+        'editorconfig/editorconfig-vim', 'dyng/ctrlsf.vim', -- edit search matches in multiple files
         {'metakirby5/codi.vim', opt = true, cmd = 'Codi'}, -- scratch pad
         { -- Sane buffer/window deletion.
             'mhinz/vim-sayonara',
@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
 
     -- UI/UX
     use {
-        'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim', 
+        'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
         'Yggdroot/indentLine', 'wellle/context.vim', -- Shows the function name you are working on
         'gennaro-tedesco/nvim-peekup', -- view register contents
         'liuchengxu/vim-which-key', 'norcalli/nvim-colorizer.lua', -- colored hex codes
@@ -77,8 +77,7 @@ return require('packer').startup(function(use)
     use {
         'glepnir/lspsaga.nvim', -- code definitions and references popup
         'neovim/nvim-lspconfig', 'onsails/lspkind-nvim', -- icons to lsp suggestion hrsh7th/nvim-compes
-        'ray-x/lsp_signature.nvim', 'tjdevries/nlua.nvim', -- lua 
-        {
+        'ray-x/lsp_signature.nvim', {
             'mhartington/formatter.nvim',
             opt = true,
             cmd = 'Format',
