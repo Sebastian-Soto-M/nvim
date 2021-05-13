@@ -15,6 +15,14 @@ function M.apply_options(opts) for k, v in pairs(opts) do vim.opt[k] = v end end
 
 function M.apply_globals(globals) for k, v in pairs(globals) do vim.g[k] = v end end
 
+function M.apply_highlights(highlights)
+    for k, v in pairs(highlights) do
+        local cmd = 'highlight ' .. k .. ' guifg=' .. v
+        vim.cmd(cmd)
+        print(cmd)
+    end
+end
+
 function M.apply_colorscheme(name, mode)
     M.apply_options({
         termguicolors = true,
@@ -44,9 +52,14 @@ function M.is_buffer_empty() return vim.fn.empty(vim.fn.expand('%:t')) == 1 end
 -- Check if the windows width is greater than a given number of columns
 function M.has_width_gt(cols) return vim.fn.winwidth(0) / 2 > cols end
 
-function M.save_all() 
+function M.save_all()
     vim.cmd 'wa'
     print('Saved all files')
+end
+
+function M.search_word()
+    local word = vim.api.nvim_input('Search for a word >')
+    print(word)
 end
 
 return M

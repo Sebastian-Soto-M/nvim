@@ -27,6 +27,25 @@ require('formatter').setup({
         css = {prettier},
         html = {prettier},
         javascript = {prettier},
+        java = {
+            function()
+                return {
+                    exe = "astyle",
+                    args = {
+                        "mode=java", "--style=java", "-M120", -- -M (match continuation indent) 
+                        "-xC80", -- -xC (max code length) 
+                        "-xt4", -- -xt (indent continuation) 
+                        "-xe", -- -xe (delete empty lines) 
+                        "-xg" -- -xg (pad comma)
+                        -- -xU (indent after parens) 
+                    },
+                    stdin = true
+                }
+            end
+        },
+        -- let g:formatdef_cstm_java='"astyle --mode=java --style=java -M120 -xC80 -xt4 -xe -xg"' 
+        -- let g:formatters_java=['cstm_java']
+
         json = {prettier},
         markdown = {prettier},
         python = {
@@ -34,8 +53,7 @@ require('formatter').setup({
                 return {
                     exe = "autopep8",
                     args = {
-                        "-a", "--max-line-length", 80,
-                        "--ignore", "E731",
+                        "-a", "--max-line-length", 80, "--ignore", "E731",
                         vim.api.nvim_buf_get_name(0)
                     },
                     stdin = true

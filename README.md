@@ -1,25 +1,40 @@
 # Nvim Lua Configuration
 
+<!-- vim-markdown-toc Marked -->
+
+- [Plugins](#plugins)
+- [Mappings](#mappings)
+  - [Table initialization](#table-initialization)
+  - [Initialize mappings](#initialize-mappings)
+- [LSP](#lsp)
+- [Formatter](#formatter)
+
+<!-- vim-markdown-toc -->
+
 ## Plugins
-To check the plugins installed go to __lua>plugins>\_packer.lua__
+
+To check the plugins installed go to **lua>plugins>\_packer.lua**
 
 > Some plugins have requirements, others have an optional status.
-> To better understand  this file go to the [Packer documentation](https://github.com/wbthomason/packer.nvim#quickstart)
+> To better understand this file go to the [Packer documentation](https://github.com/wbthomason/packer.nvim#quickstart)
 
-Each plugin is configured in __lua>plugins>\_pluginname.lua__
-* This file is used to initalize the plugin's configurations and functions
+Each plugin is configured in **lua>plugins>\_pluginname.lua**
+
+- This file is used to initalize the plugin's configurations and functions
 
 ## Mappings
 
-Confugured in __lua>modules>mappings>\_pluginname.lua__, mappings files use the following structure:
-* Table with capital letter of the plugin's name
-    * Mod key
-    * Chord function to use the mod key
-    * Function to call the plugin
-    * All the possible mappings from the plugin
-* Function to initialize mappings
+Confugured in **lua>modules>mappings>\_pluginname.lua**, mappings files use the following structure:
+
+- Table with capital letter of the plugin's name
+  - Mod key
+  - Chord function to use the mod key
+  - Function to call the plugin
+  - All the possible mappings from the plugin
+- Function to initialize mappings
 
 ### Table initialization
+
 ```lua
 local T = {}
 
