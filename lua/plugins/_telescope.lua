@@ -113,7 +113,7 @@ local M = {
     end,
 
     command_history = function()
-        require("telescope.builtin").command_history(no_preview(W.narrow))
+        require("telescope.builtin").command_history(no_preview(W.wide))
     end,
 
     commands = function() require("telescope.builtin").commands(no_preview()) end,
@@ -126,7 +126,7 @@ local M = {
     frecency = function() require("telescope").extensions.frecency.frecency() end,
 
     git_bcommits = function()
-        require("telescope.builtin").git_bcommits(no_preview())
+        require("telescope.builtin").git_bcommits()
     end,
 
     git_branches = function()
@@ -134,7 +134,7 @@ local M = {
     end,
 
     git_commits = function()
-        require("telescope.builtin").git_commits(no_preview())
+        require("telescope.builtin").git_commits()
     end,
 
     git_files = function() require("telescope.builtin").git_files() end,
@@ -144,7 +144,7 @@ local M = {
     help_tags = function() require("telescope.builtin").help_tags() end,
 
     keymaps = function()
-        require("telescope.builtin").keymaps(no_preview(W.slender))
+        require("telescope.builtin").keymaps(no_preview(W.narrow))
     end,
 
     live_grep = function()

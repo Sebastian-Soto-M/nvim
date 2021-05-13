@@ -44,7 +44,8 @@ return require('packer').startup(function(use)
     -- Motion and text objects
     use {
         'wellle/targets.vim', 'phaazon/hop.nvim', 'unblevable/quick-scope',
-        'christoomey/vim-sort-motion', 'michaeljsmith/vim-indent-object'
+        'christoomey/vim-sort-motion', 'michaeljsmith/vim-indent-object',
+        'yuttie/comfortable-motion.vim'
     }
 
     -- UI/UX
@@ -83,7 +84,11 @@ return require('packer').startup(function(use)
             cmd = 'Format',
             requires = {'andrejlevkovitch/vim-lua-format'}
         }, {'jose-elias-alvarez/nvim-lsp-ts-utils', opt = false}, -- typescript
-        {'mfussenegger/nvim-jdtls', opt = false} -- java
+        {'mfussenegger/nvim-jdtls', opt = false}, -- java
+        {
+            'tjdevries/nlua.nvim', 'euclidianAce/BetterLua.vim',
+            'tjdevries/manillua.nvim'
+        } -- Lua
     }
 
     -- Snippets
@@ -112,7 +117,8 @@ return require('packer').startup(function(use)
                     'iamcco/markdown-preview.nvim',
                     run = 'cd app && yarn install',
                     opt = true
-                }
+                },
+                {'mzlogin/vim-markdown-toc', opt = true, cmd = 'GenTocMarked'}
             },
             ft = {'markdown'}
         }, {'dhruvasagar/vim-table-mode', ft = {'text', 'markdown'}},

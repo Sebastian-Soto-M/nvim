@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["BetterLua.vim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/BetterLua.vim"
+  },
   ["codi.vim"] = {
     commands = { "Codi" },
     loaded = false,
@@ -148,6 +152,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
+  ["manillua.nvim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/manillua.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -156,6 +164,10 @@ _G.packer_plugins = {
   neogit = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/neogit"
+  },
+  ["nlua.nvim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nlua.nvim"
   },
   ["nvim-bufferline.lua"] = {
     loaded = false,
@@ -215,7 +227,6 @@ _G.packer_plugins = {
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    config = { "\27LJ\2\2C\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\22nvim-web-devicons\frequire\0" },
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
@@ -309,6 +320,12 @@ _G.packer_plugins = {
     needs_bufread = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown"
   },
+  ["vim-markdown-toc"] = {
+    commands = { "GenTocMarked" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown-toc"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-maximizer"
@@ -368,17 +385,14 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: nvim-web-devicons
-time("Config for nvim-web-devicons", true)
-try_loadstring("\27LJ\2\2C\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\22nvim-web-devicons\frequire\0", "config", "nvim-web-devicons")
-time("Config for nvim-web-devicons", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file Format lua require("packer.load")({'formatter.nvim'}, { cmd = "Format", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file GenTocMarked lua require("packer.load")({'vim-markdown-toc'}, { cmd = "GenTocMarked", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file GitMessenger lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessenger", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time("Defining lazy-load commands", false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -389,7 +403,7 @@ vim.cmd [[au FileType cls ++once lua require("packer.load")({'vimtex'}, { ft = "
 vim.cmd [[au FileType dtx ++once lua require("packer.load")({'vimtex'}, { ft = "dtx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType text ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode'}, { ft = "text" }, _G.packer_plugins)]]
 vim.cmd [[au FileType brf ++once lua require("packer.load")({'vimtex'}, { ft = "brf" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'goyo.vim', 'vim-table-mode'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType blg ++once lua require("packer.load")({'vimtex'}, { ft = "blg" }, _G.packer_plugins)]]
 vim.cmd [[au FileType fd ++once lua require("packer.load")({'vimtex'}, { ft = "fd" }, _G.packer_plugins)]]
 vim.cmd [[au FileType aux ++once lua require("packer.load")({'vimtex'}, { ft = "aux" }, _G.packer_plugins)]]
@@ -397,12 +411,12 @@ vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "
 time("Defining lazy-load filetype autocommands", false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", true)
-vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", false)
 time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", true)
 vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
 time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", false)
+time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", true)
+vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
+time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

@@ -9,39 +9,86 @@ T = {
         return 'require("plugins._telescope").' .. cmd .. '()'
     end,
     file_pickers = {
-        find_files = function(keys) K.run_lua(keys, T.telescope('find_files')) end,
-        frecency = function(keys) K.run_lua(keys, T.telescope('frecency')) end,
-        git_files = function(keys) K.run_lua(keys, T.telescope('git_files')) end,
-        live_grep = function(keys) K.run_lua(keys, T.telescope('live_grep')) end,
+        find_files = function(keys)
+            K.run_lua(keys, T.telescope('find_files'))
+        end,
+        frecency = function(keys)
+            K.run_lua(keys, T.telescope('frecency'))
+        end,
+        git_files = function(keys)
+            K.run_lua(keys, T.telescope('git_files'))
+        end,
+        live_grep = function(keys)
+            K.run_lua(keys, T.telescope('live_grep'))
+        end
     },
     git = {
-        branches = function(keys) K.run_lua(keys, T.telescope('git_branches')) end,
-        status = function(keys) K.run_lua(keys, T.telescope('git_status')) end,
-        commits = function(keys) K.run_lua(keys, T.telescope('git_commits')) end,
-        bcommits = function(keys) K.run_lua(keys, T.telescope('git_bcommits')) end,
+        branches = function(keys)
+            K.run_lua(keys, T.telescope('git_branches'))
+        end,
+        status = function(keys)
+            K.run_lua(keys, T.telescope('git_status'))
+        end,
+        commits = function(keys)
+            K.run_lua(keys, T.telescope('git_commits'))
+        end,
+        bcommits = function(keys)
+            K.run_lua(keys, T.telescope('git_bcommits'))
+        end
     },
     lsp = {
-        code_actions = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_code_actions')) end,
-        document_diagnostics = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_document_diagnostics')) end,
-        document_symbols = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_document_symbols')) end,
-        references = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_references')) end,
-        workspace_diagnostics = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_workspace_diagnostics')) end,
-        workspace_symbols = function(keys) K.run_lua_buf('n', keys, T.telescope('lsp_workspace_symbols')) end,
+        code_actions = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_code_actions'))
+        end,
+        document_diagnostics = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_document_diagnostics'))
+        end,
+        document_symbols = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_document_symbols'))
+        end,
+        definitions = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_definitions'))
+        end,
+        references = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_references'))
+        end,
+        workspace_diagnostics = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_workspace_diagnostics'))
+        end,
+        workspace_symbols = function(keys)
+            K.run_lua_buf('n', keys, T.telescope('lsp_workspace_symbols'))
+        end
     },
     vim_pickers = {
         buffers = function(keys) K.run_lua(keys, T.telescope('buffers')) end,
-        command_history = function(keys) K.run_lua(keys, T.telescope('command_history')) end,
-        commands = function(keys) K.run_lua(keys, T.telescope('commands')) end,
-        help_tags = function(keys) K.run_lua(keys, T.telescope('help_tags')) end,
+        command_history = function(keys)
+            K.run_lua(keys, T.telescope('command_history'))
+        end,
+        commands = function(keys)
+            K.run_lua(keys, T.telescope('commands'))
+        end,
+        help_tags = function(keys)
+            K.run_lua(keys, T.telescope('help_tags'))
+        end,
         keymaps = function(keys) K.run_lua(keys, T.telescope('keymaps')) end,
         marks = function(keys) K.run_lua(keys, T.telescope('marks')) end,
-        registers = function(keys) K.run_lua(keys, T.telescope('registers')) end,
-        reloader = function(keys) K.run_lua(keys, T.telescope('reloader')) end,
-        search_history = function(keys) K.run_lua(keys, T.telescope('search_history')) end,
-        spell_suggest = function(keys) K.run_lua(keys, T.telescope('spell_suggest')) end,
+        registers = function(keys)
+            K.run_lua(keys, T.telescope('registers'))
+        end,
+        reloader = function(keys)
+            K.run_lua(keys, T.telescope('reloader'))
+        end,
+        search_history = function(keys)
+            K.run_lua(keys, T.telescope('search_history'))
+        end,
+        spell_suggest = function(keys)
+            K.run_lua(keys, T.telescope('spell_suggest'))
+        end,
         tags = function(keys) K.run_lua(keys, T.telescope('tags')) end,
-        vim_options = function(keys) K.run_lua(keys, T.telescope('vim_options')) end,
-    },
+        vim_options = function(keys)
+            K.run_lua(keys, T.telescope('vim_options'))
+        end
+    }
 }
 
 T.initialize_mappings = function()
