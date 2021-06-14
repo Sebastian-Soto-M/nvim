@@ -1,6 +1,8 @@
 local M = {}
 require('modules.mappings._helper')
 
+M.Split = {vertical = 'vs', horizontal = 'sp'}
+
 function M.add(value, str, sep)
     sep = sep or ","
     str = str or ""
@@ -56,6 +58,11 @@ function M.save_all()
     vim.cmd 'wa'
     print('Saved all files')
 end
+
+---split dir should be vs or sp
+---@param split_dir string
+---@param cmd string
+function M.run_shell_cmd(split_dir, cmd) vim.cmd(split_dir .. ' te ' .. cmd) end
 
 function M.search_word()
     local word = vim.api.nvim_input('Search for a word >')

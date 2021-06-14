@@ -2,6 +2,7 @@ require('nvim-web-devicons').setup {}
 
 local I = require('modules.theme.icons')
 local apply_globals = require('utils').apply_globals
+local apply_highlights = require('utils').apply_highlights
 
 vim.cmd [[packadd nvim-tree.lua]]
 

@@ -81,6 +81,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/codi.vim"
   },
+  ["comfortable-motion.vim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/comfortable-motion.vim"
+  },
   ["context.vim"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/context.vim"
@@ -236,7 +240,7 @@ _G.packer_plugins = {
   },
   playground = {
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/playground"
   },
   ["plenary.nvim"] = {
@@ -323,7 +327,7 @@ _G.packer_plugins = {
   ["vim-markdown-toc"] = {
     commands = { "GenTocMarked" },
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown-toc"
   },
   ["vim-maximizer"] = {
@@ -389,10 +393,10 @@ time("Defining packer_plugins", false)
 -- Command lazy-loads
 time("Defining lazy-load commands", true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file Format lua require("packer.load")({'formatter.nvim'}, { cmd = "Format", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file GenTocMarked lua require("packer.load")({'vim-markdown-toc'}, { cmd = "GenTocMarked", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file GitMessenger lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessenger", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file GenTocMarked lua require("packer.load")({'vim-markdown-toc'}, { cmd = "GenTocMarked", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time("Defining lazy-load commands", false)
 
 vim.cmd [[augroup packer_load_aucmds]]

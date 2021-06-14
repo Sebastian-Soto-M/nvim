@@ -1,5 +1,6 @@
 require('plugins._packer')
 
+require('plugins._animations')
 require('plugins._completion')
 require('plugins._formatter')
 require('plugins._lspkind')
