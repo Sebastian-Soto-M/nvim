@@ -1,72 +1,97 @@
-local M = {}
-require('modules.mappings._helper')
+local U = {}
 
-M.Split = {vertical = 'vs', horizontal = 'sp'}
+function U.apply_options(opts) for k, v in pairs(opts) do vim.opt[k] = v end end
 
-function M.add(value, str, sep)
-    sep = sep or ","
-    str = str or ""
-    value = type(value) == "table" and table.concat(value, sep) or value
-    return str ~= "" and table.concat({value, str}, sep) or value
-end
+function U.apply_globals(globals) for k, v in pairs(globals) do vim.g[k] = v end end
 
-function M.concat(value) return table.concat(value) end
+local C = {env = {buffer = "b", global = "g"}, lang = {lua = "l", vim = "v"}}
 
--- Apply global options
-function M.apply_options(opts) for k, v in pairs(opts) do vim.opt[k] = v end end
-
-function M.apply_globals(globals) for k, v in pairs(globals) do vim.g[k] = v end end
-
-function M.apply_highlights(highlights)
-    for k, v in pairs(highlights) do
-        local cmd = 'highlight ' .. k .. ' guifg=' .. v
-        vim.cmd(cmd)
-        print(cmd)
+---@param env string
+---@return function
+local function get_set_keymap_fun(env, ...)
+    if env == C.env.buffer then
+        return vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
+    return vim.api.nvim_set_keymap(...)
 end
 
-function M.apply_colorscheme(name, mode)
-    M.apply_options({
-        termguicolors = true,
-        guicursor = 'n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor50',
-        background = mode
-    })
-
-    M.apply_globals({colors_name = name})
-
-    vim.api.nvim_command('colorscheme ' .. name)
+local function map(mode, keys, action, opts, env)
+    local options = {noremap = true}
+    if opts then options = vim.tbl_extend('force', options, opts) end
+    get_set_keymap_fun(env, mode, keys, action, options)
 end
 
--- Map keys
-function M.map(mode, key, fn, opts)
-    vim.api.nvim_set_keymap(mode, key, fn, opts or {})
+local function run_cmd(mode, keys, action, lang, env, enter)
+    local options = {noremap = true, silent = false}
+    local prefix = ":"
+    if lang == C.lang.lua then prefix = prefix .. "lua " end
+    action = prefix .. action
+    if env == nil then env = C.env.global end
+    if enter == nil then
+        action = action .. '<CR>'
+        options.silent = true
+    end
+    get_set_keymap_fun(env, mode, keys, action, options)
 end
 
--- Buffer local keymap
-function M.buf_map(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
--- Buffer local option
-function M.buf_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
--- Check whether the current buffer is empty
-function M.is_buffer_empty() return vim.fn.empty(vim.fn.expand('%:t')) == 1 end
-
--- Check if the windows width is greater than a given number of columns
-function M.has_width_gt(cols) return vim.fn.winwidth(0) / 2 > cols end
-
-function M.save_all()
-    vim.cmd 'wa'
-    print('Saved all files')
+---@param mode string
+---@param keys string
+---@param action string
+---@param opts table
+function U.map_global(mode, keys, action, opts)
+    map(mode, keys, action, opts, C.env.global)
 end
 
----split dir should be vs or sp
----@param split_dir string
----@param cmd string
-function M.run_shell_cmd(split_dir, cmd) vim.cmd(split_dir .. ' te ' .. cmd) end
-
-function M.search_word()
-    local word = vim.api.nvim_input('Search for a word >')
-    print(word)
+---# Environments
+---**"b"** for buffer or **"g"** for global
+--- ___
+---# Modes
+-- | String value | Vimscript equivalent | Affected modes                           | Help page       |
+-- | :----------: | :------------------: | :--------------------------------------: | :-------------: |
+-- | **''**       | **:map**             | Normal, Visual, Select, Operator-pending | **mapmode-nvo** |
+-- | **'n'**      | **:nmap**            | Normal                                   | **mapmode-n**   |
+-- | **'v'**      | **:vmap**            | Visual and Select                        | **mapmode-v**   |
+-- | **'s'**      | **:smap**            | Select                                   | **mapmode-s**   |
+-- | **'x'**      | **:xmap**            | Visual                                   | **mapmode-x**   |
+-- | **'o'**      | **:omap**            | Operator-pending                         | **mapmode-o**   |
+-- | **'!'**      | **:map!**            | Insert and Command-line                  | **mapmode-ic**  |
+-- | **'i'**      | **:imap**            | Insert                                   | **mapmode-i**   |
+-- | **'l'**      | **:lmap**            | Insert, Command-line, Lang-Arg           | **mapmode-l**   |
+-- | **'c'**      | **:cmap**            | Command-line                             | **mapmode-c**   |
+-- | **'t'**      | **:tmap**            | Terminal                                 | **mapmode-t**   |
+---@param mode string
+---@param keys string
+---@param action string
+---@param env string
+---@param enter boolean
+function U.run_lua(mode, keys, action, env, enter)
+    run_cmd(mode, keys, action, C.lang.lua, env, enter)
 end
 
-return M
+---# Environments
+---**"b"** for buffer or **"g"** for global
+--- ___
+---# Modes
+-- | String value | Vimscript equivalent | Affected modes                           | Help page       |
+-- | :----------: | :------------------: | :--------------------------------------: | :-------------: |
+-- | **''**       | **:map**             | Normal, Visual, Select, Operator-pending | **mapmode-nvo** |
+-- | **'n'**      | **:nmap**            | Normal                                   | **mapmode-n**   |
+-- | **'v'**      | **:vmap**            | Visual and Select                        | **mapmode-v**   |
+-- | **'s'**      | **:smap**            | Select                                   | **mapmode-s**   |
+-- | **'x'**      | **:xmap**            | Visual                                   | **mapmode-x**   |
+-- | **'o'**      | **:omap**            | Operator-pending                         | **mapmode-o**   |
+-- | **'!'**      | **:map!**            | Insert and Command-line                  | **mapmode-ic**  |
+-- | **'i'**      | **:imap**            | Insert                                   | **mapmode-i**   |
+-- | **'l'**      | **:lmap**            | Insert, Command-line, Lang-Arg           | **mapmode-l**   |
+-- | **'c'**      | **:cmap**            | Command-line                             | **mapmode-c**   |
+-- | **'t'**      | **:tmap**            | Terminal                                 | **mapmode-t**   |
+---@param mode string
+---@param keys string
+---@param action string
+---@param env string
+---@param enter boolean
+function U.run_vim(mode, keys, action, env, enter)
+    run_cmd(mode, keys, action, C.lang.vim, env, enter)
+end
+
+return U
