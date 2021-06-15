@@ -1,2 +1,15 @@
+local C = require('config')
+local U = require('utils')
 require("theme._statusline")
-vim.cmd 'colorscheme dracula'
+
+if C.THEME == 'gruvbox' then
+    U.apply_globals({
+        gruvbox_contrast_dark = 'hard',
+        gruvbox_hls_cursor = 'aqua',
+        gruvbox_italic = 1,
+        gruvbox_bold = 1,
+        gruvbox_color_column = 'bg3',
+        gruvbox_italicize_strings = 1
+    })
+end
+vim.cmd('colorscheme ' .. C.THEME)

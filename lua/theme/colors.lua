@@ -10,6 +10,18 @@ local C = {
         blue = '#BD93F9',
         magenta = '#FF79C6',
         red = '#FF5555'
+    },
+    gruvbox = {
+        bg = '#282828',
+        fg = '#ebdbb2',
+        section_bg = '#bg3',
+        yellow = '#fabd2f',
+        cyan = '#8ec07c',
+        green = '#b8bb26',
+        orange = '#fe8019',
+        blue = '#458588',
+        magenta = '#b16286',
+        red = '#fb4934'
     }
 }
 return C

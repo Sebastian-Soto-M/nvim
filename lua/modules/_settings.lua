@@ -3,6 +3,7 @@ local U = require('utils')
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'set shortmess+=c'
+vim.cmd 'set colorcolumn=80'
 vim.cmd 'au FileType css,scss,sass,html setlocal spell spelllang=en_us'
 
 local indent = 4

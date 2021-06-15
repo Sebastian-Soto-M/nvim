@@ -1,4 +1,4 @@
-local C = require('theme.colors').dracula
+local C = require('config').COLORS
 local I = require('theme.icons')
 local condition = require('galaxyline.condition')
 local gl = require('galaxyline')

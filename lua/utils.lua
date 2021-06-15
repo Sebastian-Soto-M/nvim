@@ -62,9 +62,9 @@ end
 ---@param mode string
 ---@param keys string
 ---@param action string
----@param env string
 ---@param enter boolean
-function U.run_lua(mode, keys, action, env, enter)
+---@param env string
+function U.run_lua(mode, keys, action, enter, env)
     run_cmd(mode, keys, action, C.lang.lua, env, enter)
 end
 
@@ -88,10 +88,20 @@ end
 ---@param mode string
 ---@param keys string
 ---@param action string
----@param env string
 ---@param enter boolean
-function U.run_vim(mode, keys, action, env, enter)
+---@param env string
+function U.run_vim(mode, keys, action, enter, env)
     run_cmd(mode, keys, action, C.lang.vim, env, enter)
+end
+
+function U.save_all()
+    local gls = require('galaxyline')
+    gls.section.mid[1] = {
+        Text = {
+            provider = function() return 'Saved all files' end,
+            highlight = {C.fg, C.bg}
+        }
+    }
 end
 
 return U
