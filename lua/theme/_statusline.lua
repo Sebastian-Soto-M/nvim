@@ -1,4 +1,4 @@
-local C = require('config').COLORS
+local C = require('settings.config').COLORS
 local I = require('theme.icons')
 local condition = require('galaxyline.condition')
 local gl = require('galaxyline')

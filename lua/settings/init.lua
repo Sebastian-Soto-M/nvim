@@ -6,8 +6,6 @@ vim.cmd 'set shortmess+=c'
 vim.cmd 'set colorcolumn=80'
 vim.cmd 'au FileType css,scss,sass,html setlocal spell spelllang=en_us'
 
-local indent = 4
-
 local options = {
     hidden = true, -- Round indent
     scrolloff = 5, -- Lines of context
@@ -26,10 +24,7 @@ local options = {
 
     -- Tabs & Spaces
     expandtab = true, -- Use spaces instead of tabs
-    shiftwidth = indent, -- Size of an indent
     smartindent = true, -- Insert indents automatically
-    softtabstop = indent,
-    tabstop = indent, -- Number of spaces tabs count for
 
     -- Backup
     undofile = true,
@@ -48,3 +43,9 @@ local options = {
 }
 
 U.apply_options(options)
+
+U.apply_globals({
+    python3_host_prog = "/home/snsm/.config/virtualenvs/neovim/bin/python"
+})
+
+require('settings._augroups')

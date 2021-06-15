@@ -17,7 +17,9 @@ return require('packer').startup(function(use)
             'mhinz/vim-sayonara',
             cmd = 'Sayonara',
             opt = true
-        }
+        }, -- Wrapper for an external formatter
+        {"mhartington/formatter.nvim", opt = true, cmd = "Format"}
+
     }
 
     -- Telescope
@@ -74,21 +76,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- LSP
+    -- COC.nvim
     use {
-        'glepnir/lspsaga.nvim', -- code definitions and references popup
-        'neovim/nvim-lspconfig', 'onsails/lspkind-nvim', -- icons to lsp suggestion hrsh7th/nvim-compes
-        'ray-x/lsp_signature.nvim', {
-            'mhartington/formatter.nvim',
-            opt = true,
-            cmd = 'Format',
-            requires = {'andrejlevkovitch/vim-lua-format'}
-        }, {'jose-elias-alvarez/nvim-lsp-ts-utils', opt = false}, -- typescript
-        {'mfussenegger/nvim-jdtls', opt = false}, -- java
-        {
-            'tjdevries/nlua.nvim', 'euclidianAce/BetterLua.vim',
-            'tjdevries/manillua.nvim'
-        } -- Lua
+        'fannheyward/telescope-coc.nvim',
+        {'neoclide/coc.nvim', branch = 'release'}
     }
 
     -- Snippets

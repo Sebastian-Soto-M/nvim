@@ -1,4 +1,4 @@
-local C = require('config')
+local C = require('settings.config')
 local U = require('utils')
 require("theme._statusline")
 
