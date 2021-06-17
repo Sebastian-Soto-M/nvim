@@ -59,6 +59,8 @@
     }
   },
 
+  "Lua.diagnostics.globals": ["vim", "bunfr"],
+
   "prettier.bracketSpacing": true,
   "prettier.disableLanguages": ["vue"],
   "prettier.printWidth": 80,

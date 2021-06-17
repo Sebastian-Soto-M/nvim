@@ -16,6 +16,7 @@ local options = {
     showmode = false, -- Don't show the mode
     sidescrolloff = 10, -- Columns of context
     smartcase = true, -- Don't ignore case with capitals
+    ignorecase = true,
     splitbelow = true, -- Put new windows below current
     splitright = true, -- Put new windows right of current
     termguicolors = true, -- True color support

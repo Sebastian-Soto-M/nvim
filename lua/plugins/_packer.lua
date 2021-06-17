@@ -53,8 +53,7 @@ return require('packer').startup(function(use)
     -- UI/UX
     use {
         'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
-        'Yggdroot/indentLine', 'wellle/context.vim', -- Shows the function name you are working on
-        'gennaro-tedesco/nvim-peekup', -- view register contents
+        'Yggdroot/indentLine', 'gennaro-tedesco/nvim-peekup', -- view register contents
         'norcalli/nvim-colorizer.lua', -- colored hex codes
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
@@ -84,8 +83,7 @@ return require('packer').startup(function(use)
 
     -- Snippets
     use {
-        'hrsh7th/nvim-compe', 'hrsh7th/vim-vsnip', 'cstrap/python-snippets',
-        'ylcnfrht/vscode-python-snippet-pack', 'xabikos/vscode-javascript',
+        'hrsh7th/nvim-compe', 'hrsh7th/vim-vsnip', 'xabikos/vscode-javascript',
         'mattn/emmet-vim'
     }
 
@@ -119,4 +117,12 @@ return require('packer').startup(function(use)
     -- Status line
     use {'glepnir/galaxyline.nvim', branch = 'main'}
 
+    -- Lang specific
+    use {
+        { -- Lua
+            'euclidianAce/BetterLua.vim'
+        }, { -- Python
+            'cstrap/python-snippets', 'ylcnfrht/vscode-python-snippet-pack'
+        }
+    }
 end)

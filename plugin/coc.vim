@@ -56,9 +56,9 @@ nm <silent> [d <Plug>(coc-diagnostic-prev)
 nm <silent> ]d <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nm <silent> gd :Telescope coc definition<CR>
-nm <silent> gy :Telescope coc type_definitions<CR>
-nm <silent> gi :Telescope coc implementation<CR>
+nm <silent> gd <Plug>(coc-definition)
+nm <silent> gy <Plug>(coc-type-definition)
+nm <silent> gi <Plug>(coc-implementation)
 nm <silent> gr :Telescope coc references<CR>
 
 " Use K to show documentation in preview window.

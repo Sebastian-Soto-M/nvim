@@ -1,5 +1,4 @@
 require('plugins')
 require('settings')
-require('mappings._defaults')
-require('mappings._telescope').initialize_mappings()
+require('mappings')
 require('theme')
