@@ -13,7 +13,8 @@ local definitions = {
             "VimEnter,FileType", "*",
             "lua require('utils').load_filetype_config()"
         }
-    }
+    },
+    indent_line_reset = {{"BufRead", "*", "IndentLinesReset"}}
 }
 
 for group, definition in pairs(definitions) do

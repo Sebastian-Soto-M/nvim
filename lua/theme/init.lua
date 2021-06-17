@@ -6,8 +6,9 @@ if C.THEME == 'gruvbox' then
     U.apply_globals({
         gruvbox_contrast_dark = 'hard',
         gruvbox_hls_cursor = 'aqua',
-        gruvbox_italic = 1,
+        gruvbox_italic = 0,
         gruvbox_bold = 1,
+        gruvbox_invert_selection = 0,
         gruvbox_color_column = 'bg3',
         gruvbox_italicize_strings = 1
     })

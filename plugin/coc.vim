@@ -4,8 +4,8 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-cssmodules',
             \ 'coc-emmet',
+            \ 'coc-diagnostic',
             \ 'coc-explorer',
-            \ 'coc-git',
             \ 'coc-html',
             \ 'coc-java',
             \ 'coc-java-debug',
@@ -20,14 +20,6 @@ let g:coc_global_extensions = [
             \ 'coc-xml',
             \ 'coc-yank',
             \ ]
-
-set encoding=utf-8
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one

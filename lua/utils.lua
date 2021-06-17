@@ -5,11 +5,10 @@ function U.apply_options(opts) for k, v in pairs(opts) do vim.opt[k] = v end end
 
 function U.apply_globals(globals) for k, v in pairs(globals) do vim.g[k] = v end end
 
-function U.apply_indentation(indent)
-    local buf = vim.bo
-    buf.shiftwidth = indent
-    buf.tabstop = indent
-    buf.softtabstop = indent
+function U.apply_local_indentation(indent)
+    local cmd = 'setlocal shiftwidth=' .. indent .. ' tabstop=' .. indent
+    vim.cmd(cmd)
+    vim.cmd 'IndentLinesReset'
 end
 
 local C = {env = {buffer = "b", global = "g"}, lang = {lua = "l", vim = "v"}}
