@@ -2,7 +2,7 @@ local C = require('settings.config')
 local U = require('utils')
 require("theme._statusline")
 
-if C.THEME == 'gruvbox' then
+if C.THEME.name == 'gruvbox' then
     U.apply_globals({
         gruvbox_contrast_dark = 'hard',
         gruvbox_hls_cursor = 'aqua',
@@ -13,4 +13,4 @@ if C.THEME == 'gruvbox' then
         gruvbox_italicize_strings = 1
     })
 end
-vim.cmd('colorscheme ' .. C.THEME)
+vim.cmd('colorscheme ' .. C.THEME.name)

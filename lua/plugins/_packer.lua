@@ -5,7 +5,6 @@ return require('packer').startup(function(use)
     -- To handle Lua configuration
     use {'wbthomason/packer.nvim', 'tami5/sql.nvim'}
     use {'kyazdani42/nvim-web-devicons', opt = false}
-    use 'kyazdani42/nvim-tree.lua'
 
     -- Development
     use {
@@ -58,6 +57,7 @@ return require('packer').startup(function(use)
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
+        'eddyekofo94/gruvbox-flat.nvim',
         {'morhetz/gruvbox', disable = false, opt = true}, 'szw/vim-maximizer' -- Toggle size of split windows
     }
 
