@@ -57,10 +57,10 @@ return require('packer').startup(function(use)
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
-        'eddyekofo94/gruvbox-flat.nvim',
         {'morhetz/gruvbox', disable = false, opt = true}, 'szw/vim-maximizer' -- Toggle size of split windows
     }
 
+    use {'eddyekofo94/gruvbox-flat.nvim'}
     -- Treesitter
     use { -- Syntax
         'nvim-treesitter/nvim-treesitter',
