@@ -7,5 +7,5 @@ local THEMES = {
     dracula = {name = 'dracula', colors = COLORS['dracula']}
 }
 
-C.THEME = THEMES.gruvbox
+C.THEME = THEMES.gruvbox_flat
 return C

@@ -46,7 +46,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/home/snsm/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/snsm/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/snsm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/snsm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/snsm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,20 +57,25 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["BetterLua.vim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/BetterLua.vim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/coc.nvim"
@@ -84,10 +89,6 @@ _G.packer_plugins = {
   ["comfortable-motion.vim"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/comfortable-motion.vim"
-  },
-  ["context.vim"] = {
-    loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/context.vim"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
@@ -130,10 +131,9 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/goyo.vim"
   },
-  gruvbox = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/gruvbox"
+  ["gruvbox-flat.nvim"] = {
+    loaded = true,
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
@@ -169,10 +169,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-peekup"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
@@ -207,7 +203,7 @@ _G.packer_plugins = {
   },
   playground = {
     loaded = false,
-    needs_bufread = true,
+    needs_bufread = false,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/playground"
   },
   ["plenary.nvim"] = {
@@ -290,7 +286,7 @@ _G.packer_plugins = {
   ["vim-markdown-toc"] = {
     commands = { "GenTocMarked" },
     loaded = false,
-    needs_bufread = true,
+    needs_bufread = false,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown-toc"
   },
   ["vim-maximizer"] = {
@@ -338,7 +334,7 @@ _G.packer_plugins = {
   },
   vimtex = {
     loaded = false,
-    needs_bufread = true,
+    needs_bufread = false,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex"
   },
   ["vscode-javascript"] = {
@@ -351,39 +347,36 @@ _G.packer_plugins = {
   }
 }
 
-time("Defining packer_plugins", false)
+time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
-time("Defining lazy-load commands", true)
+time([[Defining lazy-load commands]], true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file Format lua require("packer.load")({'formatter.nvim'}, { cmd = "Format", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file GenTocMarked lua require("packer.load")({'vim-markdown-toc'}, { cmd = "GenTocMarked", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file GitMessenger lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessenger", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Sayonara lua require("packer.load")({'vim-sayonara'}, { cmd = "Sayonara", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file Codi lua require("packer.load")({'codi.vim'}, { cmd = "Codi", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-time("Defining lazy-load commands", false)
+time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-time("Defining lazy-load filetype autocommands", true)
+time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType cls ++once lua require("packer.load")({'vimtex'}, { ft = "cls" }, _G.packer_plugins)]]
 vim.cmd [[au FileType dtx ++once lua require("packer.load")({'vimtex'}, { ft = "dtx" }, _G.packer_plugins)]]
-vim.cmd [[au FileType text ++once lua require("packer.load")({'goyo.vim', 'vim-table-mode'}, { ft = "text" }, _G.packer_plugins)]]
+vim.cmd [[au FileType text ++once lua require("packer.load")({'vim-table-mode', 'goyo.vim'}, { ft = "text" }, _G.packer_plugins)]]
 vim.cmd [[au FileType brf ++once lua require("packer.load")({'vimtex'}, { ft = "brf" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'vim-markdown', 'vim-table-mode'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-table-mode', 'vim-markdown', 'goyo.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType blg ++once lua require("packer.load")({'vimtex'}, { ft = "blg" }, _G.packer_plugins)]]
 vim.cmd [[au FileType fd ++once lua require("packer.load")({'vimtex'}, { ft = "fd" }, _G.packer_plugins)]]
 vim.cmd [[au FileType aux ++once lua require("packer.load")({'vimtex'}, { ft = "aux" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tex ++once lua require("packer.load")({'vimtex'}, { ft = "tex" }, _G.packer_plugins)]]
-time("Defining lazy-load filetype autocommands", false)
+time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", true)
-vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tex.vim", false)
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", true)
+time([[Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], true)
 vim.cmd [[source /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]]
-time("Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim", false)
+time([[Sourcing ftdetect script at: /home/snsm/.local/share/nvim/site/pack/packer/opt/vim-markdown/ftdetect/markdown.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

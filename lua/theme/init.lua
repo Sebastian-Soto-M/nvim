@@ -13,4 +13,15 @@ if C.THEME.name == 'gruvbox' then
         gruvbox_italicize_strings = 1
     })
 end
+
+if C.THEME.name == 'gruvbox-flat' then
+    U.apply_globals({
+        gruvbox_flat_style = 'hard',
+        gruvbox_transparent = false,
+        gruvbox_sidebars = {'coc-explorer'},
+        gruvbox_dark_sidebar = true,
+        gruvbox_dark_float = false
+    })
+end
+
 vim.cmd('colorscheme ' .. C.THEME.name)

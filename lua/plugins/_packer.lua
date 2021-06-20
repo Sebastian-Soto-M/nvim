@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
     -- To handle Lua configuration
     use {'wbthomason/packer.nvim', 'tami5/sql.nvim'}
     use {'kyazdani42/nvim-web-devicons', opt = false}
+    use {
+	'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'
+    }
 
     -- Development
     use {
@@ -25,7 +28,6 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
-            'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-frecency.nvim',
             "nvim-telescope/telescope-fzy-native.nvim"
         }
@@ -57,9 +59,10 @@ return require('packer').startup(function(use)
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
-        'eddyekofo94/gruvbox-flat.nvim',
-        {'morhetz/gruvbox', disable = false, opt = true}, 'szw/vim-maximizer' -- Toggle size of split windows
+        {'eddyekofo94/gruvbox-flat.nvim'},
+        'szw/vim-maximizer' -- Toggle size of split windows
     }
+
 
     -- Treesitter
     use { -- Syntax
