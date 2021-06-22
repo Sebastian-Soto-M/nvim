@@ -1,5 +1,7 @@
 local U = require('utils')
+local D = require('mappings._dispatch')
 
 U.apply_local_indentation(4)
 
-require('mappings._dispatch').initialize_mappings('pymake')
+D.initialize_mappings('pymake')
+D.map_run_file('python')
