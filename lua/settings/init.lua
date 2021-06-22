@@ -25,6 +25,7 @@ local options = {
     wildmenu = true, -- Command-line completion mode
     number = true, -- Print line number
     relativenumber = true, -- Relative line numbers
+    signcolumn = 'yes',
 
     -- Tabs & Spaces
     expandtab = true, -- Use spaces instead of tabs

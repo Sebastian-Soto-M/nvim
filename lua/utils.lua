@@ -102,13 +102,8 @@ function U.run_vim(mode, keys, action, enter, env)
 end
 
 function U.save_all()
-    local gls = require('galaxyline')
-    gls.section.mid[1] = {
-        Text = {
-            provider = function() return 'Saved all files' end,
-            highlight = {C.fg, C.bg}
-        }
-    }
+    vim.cmd('wa')
+    print('Saved all files')
 end
 
 -- FIXME move to generall utils

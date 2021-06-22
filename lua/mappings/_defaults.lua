@@ -9,7 +9,7 @@ U.map_global('n', '<C-k>', '<C-w>k')
 U.map_global('n', '<C-l>', '<C-w>l')
 U.map_global('n', 'J', 'mzJ`z')
 
-U.run_lua('n', '<C-s>', 'require("utils").save_all()') -- K.normal('<C-s>', ':wa<CR>')
+U.run_lua('n', '<leader>w', 'require("utils").save_all()') -- K.normal('<C-s>', ':wa<CR>')
 -- U.term('jk', '<C-\\><C-n>')
 
 -- -- SMALL PLUGIN DEFAULTS
