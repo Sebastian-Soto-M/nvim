@@ -19,6 +19,8 @@ D = {
                   save_wrapper(table.concat({'<bar>', 'Dispatch'}, ' ')))
     end,
     start = {
+        install = function(keys, comp) dfun(keys, comp, 'install') end,
+        uninstall = function(keys, comp) dfun(keys, comp, 'uninstall') end,
         run = function(keys, comp) dfun(keys, comp, 'run') end,
         test = function(keys, comp) dfun(keys, comp, 'test') end
     },
@@ -33,6 +35,8 @@ D = {
 D.initialize_mappings = function(comp)
     D.start.run(D.chord('r'), comp)
     D.start.test(D.chord('t'), comp)
+    D.start.install(D.chord('i'), comp)
+    D.start.uninstall(D.chord('u'), comp)
     D.clean(D.chord('c'), comp)
     D.reset(D.chord('R'))
     D.dispatch(D.chord('l'))
