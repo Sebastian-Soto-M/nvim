@@ -5,14 +5,12 @@ return require('packer').startup(function(use)
     -- To handle Lua configuration
     use {'wbthomason/packer.nvim', 'tami5/sql.nvim'}
     use {'kyazdani42/nvim-web-devicons', opt = false}
-    use {
-	'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'
-    }
+    use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
 
     -- Development
     use {
         'tpope/vim-dispatch', 'machakann/vim-sandwich', 'tpope/vim-unimpaired',
-        'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
+        'tpope/vim-commentary', 'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
         'editorconfig/editorconfig-vim', 'dyng/ctrlsf.vim', -- edit search matches in multiple files
         {'metakirby5/codi.vim', opt = true, cmd = 'Codi'}, -- scratch pad
         { -- Sane buffer/window deletion.
@@ -59,10 +57,8 @@ return require('packer').startup(function(use)
         {'akinsho/nvim-bufferline.lua', opt = true},
         {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
-        {'eddyekofo94/gruvbox-flat.nvim'},
-        'szw/vim-maximizer' -- Toggle size of split windows
+        {'eddyekofo94/gruvbox-flat.nvim'}, 'szw/vim-maximizer' -- Toggle size of split windows
     }
-
 
     -- Treesitter
     use { -- Syntax
@@ -71,10 +67,7 @@ return require('packer').startup(function(use)
         requires = {
             'nvim-treesitter/nvim-treesitter-textobjects',
             'theHamsta/nvim-treesitter-pairs', 'windwp/nvim-ts-autotag',
-            'p00f/nvim-ts-rainbow', {
-                'JoosepAlviste/nvim-ts-context-commentstring',
-                requires = {'tpope/vim-commentary'}
-            }, {'nvim-treesitter/playground', opt = true}
+            'p00f/nvim-ts-rainbow', {'nvim-treesitter/playground', opt = true}
         }
     }
 
