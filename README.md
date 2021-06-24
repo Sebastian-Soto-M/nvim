@@ -22,6 +22,11 @@ Each plugin is configured in **lua>plugins>\_pluginname.lua**
 
 - This file is used to initalize the plugin's configurations and functions
 
+### Download vba file
+
+[visincr](www.drchip.org/astronaut/vim/vbafiles/visincr.vba.gz)
+[vissort](www.drchip.org/astronaut/vim/vbafiles/vissort.vba.gz)
+
 ## Mappings
 
 Confugured in **lua>modules>mappings>\_pluginname.lua**, mappings files use the following structure:
