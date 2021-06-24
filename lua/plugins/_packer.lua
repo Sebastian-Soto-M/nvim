@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
     -- Git
     use {
         'tpope/vim-fugitive', 'tpope/vim-rhubarb', 'lewis6991/gitsigns.nvim',
-        'TimUntersberger/neogit',
         { -- Vim and Neovim plugin to reveal the commit messages under the cursor
             'rhysd/git-messenger.vim',
             cmd = 'GitMessenger',

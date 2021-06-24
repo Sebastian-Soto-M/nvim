@@ -7,6 +7,12 @@ U.run_vim('n', '<leader>ss', 'CtrlSF ', false)
 -- K.insert('t', '<C-w><C-o>', '<C-\\><C-n> :MaximizerToggle!<CR>')
 U.apply_globals({
     Illuminate_delay = 300,
+    Illuminate_ftblacklist = {'coc-explorer'},
     Illuminate_highlightUnderCursor = 0,
-    Illuminate_ftblacklist = {'coc-explorer'}
+    indentLine_char_list = {'┊', '┆', '¦', '|'},
+    rooter_patterns = {
+        '.git', 'Makefile', '*.sln', 'build/env.sh', '.vscode', 'src'
+    },
+    rooter_silent_chdir = 0,
+    sort_motion_visual_block_command = 'Vissort'
 })

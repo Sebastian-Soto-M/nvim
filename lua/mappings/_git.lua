@@ -11,7 +11,7 @@ G = {
     blame_line = function(keys)
         U.run_lua('n', keys, G.gitSigns('blame_line'))
     end,
-    dashboard = function(keys) U.run_vim('n', keys, 'Neogit') end,
+    dashboard = function(keys) U.run_vim('n', keys, 'Git') end,
     diff = function(keys) U.run_vim('n', keys, 'Gdiff') end,
     hunk = {
         next = function(keys)
