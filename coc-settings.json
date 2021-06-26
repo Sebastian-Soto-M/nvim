@@ -20,7 +20,7 @@
     "v": "open:vsplit"
   },
 
-  "html.autoClosingTags": false,
+  "html.autoClosingTags": true,
   "html.enable": true,
   "html.filetypes": ["html", "jinja", "jinja.html"],
   "html.format.enable": false,

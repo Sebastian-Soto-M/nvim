@@ -54,8 +54,7 @@ return require('packer').startup(function(use)
         'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
         'Yggdroot/indentLine', 'gennaro-tedesco/nvim-peekup', -- view register contents
         'norcalli/nvim-colorizer.lua', -- colored hex codes
-        'akinsho/nvim-bufferline.lua',
-        {'dracula/vim', as = 'dracula'},
+        'akinsho/nvim-bufferline.lua', {'dracula/vim', as = 'dracula'},
         {'joshdick/onedark.vim', disable = true, opt = true},
         {'eddyekofo94/gruvbox-flat.nvim'}, 'szw/vim-maximizer' -- Toggle size of split windows
     }
@@ -66,8 +65,8 @@ return require('packer').startup(function(use)
         run = ':TSUpdate',
         requires = {
             'nvim-treesitter/nvim-treesitter-textobjects',
-            'theHamsta/nvim-treesitter-pairs', 'windwp/nvim-ts-autotag',
-            'p00f/nvim-ts-rainbow', {'nvim-treesitter/playground', opt = true}
+            'windwp/nvim-ts-autotag', 'p00f/nvim-ts-rainbow',
+            {'nvim-treesitter/playground', opt = true}
         }
     }
 

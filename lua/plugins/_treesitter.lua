@@ -1,22 +1,14 @@
 vim.api.nvim_exec([[
     packadd nvim-treesitter
-    packadd nvim-treesitter-pairs
     packadd nvim-treesitter-textobjects
-    packadd nvim-ts-autotag
     packadd playground
 ]], false)
 
 require("nvim-treesitter.configs").setup {
-    ensure_installed = {
-        "javascript", "typescript", "tsx", "jsdoc", "cpp", "jsonc", "html",
-        "css", "lua", "java", "query", "python"
-    },
 
     highlight = {enable = true},
 
     indent = {enable = true},
-
-    autotag = {enable = true},
 
     playground = {enable = true},
 
