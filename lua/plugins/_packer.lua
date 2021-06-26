@@ -44,9 +44,9 @@ return require('packer').startup(function(use)
 
     -- Motion and text objects
     use {
-        'wellle/targets.vim', 'phaazon/hop.nvim', 'unblevable/quick-scope',
-        'christoomey/vim-sort-motion', 'michaeljsmith/vim-indent-object',
-        'yuttie/comfortable-motion.vim'
+        'mg979/vim-visual-multi', 'wellle/targets.vim', 'phaazon/hop.nvim',
+        'unblevable/quick-scope', 'christoomey/vim-sort-motion',
+        'michaeljsmith/vim-indent-object', 'yuttie/comfortable-motion.vim'
     }
 
     -- UI/UX
@@ -78,8 +78,8 @@ return require('packer').startup(function(use)
 
     -- Snippets
     use {
-        'hrsh7th/nvim-compe', 'hrsh7th/vim-vsnip', 'xabikos/vscode-javascript',
-        'mattn/emmet-vim'
+        'xabikos/vscode-javascript', 'cstrap/python-snippets',
+        'ylcnfrht/vscode-python-snippet-pack'
     }
 
     -- Project
@@ -114,10 +114,8 @@ return require('packer').startup(function(use)
 
     -- Lang specific
     use {
-        { -- Lua
+        'mattn/emmet-vim', { -- Lua
             'euclidianAce/BetterLua.vim'
-        }, { -- Python
-            'cstrap/python-snippets', 'ylcnfrht/vscode-python-snippet-pack'
         }
     }
 end)

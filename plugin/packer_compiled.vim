@@ -156,10 +156,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-compe"
-  },
   ["nvim-peekup"] = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/nvim-peekup"
@@ -317,9 +313,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
   },
-  ["vim-vsnip"] = {
+  ["vim-visual-multi"] = {
     loaded = true,
-    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/snsm/.local/share/nvim/site/pack/packer/start/vim-visual-multi"
   },
   vimtex = {
     loaded = false,

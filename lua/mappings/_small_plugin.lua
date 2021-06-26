@@ -14,5 +14,7 @@ U.apply_globals({
         '.git', 'Makefile', '*.sln', 'build/env.sh', '.vscode', 'src'
     },
     rooter_silent_chdir = 0,
-    sort_motion_visual_block_command = 'Vissort'
+    sort_motion_visual_block_command = 'Vissort',
+    sort_motion_flags = 'ui',
+    VM_leader = '\\'
 })
