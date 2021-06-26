@@ -26,6 +26,7 @@ local options = {
     number = true, -- Print line number
     relativenumber = true, -- Relative line numbers
     signcolumn = 'yes',
+    mouse = 'a',
 
     -- Tabs & Spaces
     expandtab = true, -- Use spaces instead of tabs
