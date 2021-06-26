@@ -24,6 +24,7 @@ local I = {
     bug = '',
     light_bulb = '',
     edit = '',
+    close = '',
     tree = {
         default = "",
         open = "",
