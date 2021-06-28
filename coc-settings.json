@@ -5,20 +5,17 @@
   "emmet.showSuggestionsAsSnippets": true,
 
   "explorer.buffer.tabOnly": true,
-  "explorer.git.icon.status.added": "",
-  "explorer.git.icon.status.deleted": "",
-  "explorer.git.icon.status.ignored": "",
-  "explorer.git.icon.status.modified": "",
-  "explorer.git.icon.status.renamed": "",
   "explorer.floating.border.enable": false,
+  "explorer.git.icon.status.added": "",
+  "explorer.git.icon.status.deleted": "ﮁ",
+  "explorer.git.icon.status.ignored": "",
+  "explorer.git.icon.status.modified": "ﯽ",
+  "explorer.git.icon.status.renamed": "",
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.selected": "",
+  "explorer.icon.selected": "",
+  "explorer.keyMappings.global": { "v": "open:vsplit" },
   "explorer.previewAction.onHover": false,
   "explorer.width": 30,
-
-  "explorer.keyMappings.global": {
-    "v": "open:vsplit"
-  },
 
   "html.autoClosingTags": true,
   "html.enable": true,
@@ -26,14 +23,26 @@
   "html.format.enable": false,
   "html.format.indentInnerHtml": true,
 
+  "java.codeGeneration.generateComments": false,
   "java.codeGeneration.toString.codeStyle": "STRING_BUILDER",
   "java.codeGeneration.useBlocks": true,
-  "java.codeGeneration.generateComments": false,
-  "java.format.onType.fixComment.enabled": true,
   "java.format.onType.enabled": true,
-  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/eclipse-java-google-style.xml",
+  "java.format.onType.fixComment.enabled": true,
   "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/eclipse-java-google-style.xml",
   "java.home": "/home/snsm/.local/share/sdkman/candidates/java/current",
+
+  "Lua.diagnostics.globals": ["vim", "bunfr"],
+
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+
+  "prettier.bracketSpacing": true,
+  "prettier.disableLanguages": ["vue"],
+  "prettier.printWidth": 80,
+  "prettier.trailingComma": "all",
+
+  "yank.highlight.enable": true,
+  "yank.list.maxsize": 50,
 
   "languageserver": {
     "ccls": {
@@ -59,22 +68,6 @@
     }
   },
 
-  "Lua.diagnostics.globals": ["vim", "bunfr"],
-
-  "pairs.enableCharacters": [
-    "(",
-    "[",
-    "{",
-    "'",
-    "\"",
-    "`"
-  ],
-
-  "prettier.bracketSpacing": true,
-  "prettier.disableLanguages": ["vue"],
-  "prettier.printWidth": 80,
-  "prettier.trailingComma": "all",
-
   "snippets.extends": {
     "html": ["jinja", "jinja.html"],
     "jinja": ["html", "jinja.html"],
@@ -94,8 +87,5 @@
     "snippet": "",
     "text": "",
     "variable": ""
-  },
-
-  "yank.highlight.enable": true,
-  "yank.list.maxsize": 50
+  }
 }
