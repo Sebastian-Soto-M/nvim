@@ -10,15 +10,15 @@ local I = {
     },
     separators = {up = '', down = ''},
     git = {
-        symbol = '',
-        delete = 'ﮁ',
         add = '',
-        change = 'ﯽ',
+        delete = 'ﮁ',
         ignored = "",
-        renamed = "➜",
-        unmerged = "",
-        unstaged = "ﮖ",
-        untracked = "ﮗ"
+        change = 'ﯽ',
+        renamed = '',
+        symbol = '',
+        unmerged = '',
+        unstaged = 'ﮖ',
+        untracked = 'ﮗ'
     },
     pipe = '┃',
     bug = '',

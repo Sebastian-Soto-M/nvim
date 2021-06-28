@@ -9,6 +9,8 @@ U.map_global('n', '<C-j>', '<C-w>j')
 U.map_global('n', '<C-k>', '<C-w>k')
 U.map_global('n', '<C-l>', '<C-w>l')
 U.map_global('n', 'J', 'mzJ`z')
+U.map_global('n', '[t', 'tabp')
+U.map_global('n', ']t', 'tabn')
 
 U.run_lua('n', '<leader>w', 'require("utils").save_all()') -- K.normal('<C-s>', ':wa<CR>')
 

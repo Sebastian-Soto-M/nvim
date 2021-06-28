@@ -92,6 +92,53 @@ T = {
         vim_options = function(keys)
             U.run_lua('n', keys, T.telescope('vim_options'))
         end
+    },
+    coc = {
+        mru = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc mru')
+        end,
+        links = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc links')
+        end,
+        commands = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc commands')
+        end,
+        references = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc references')
+        end,
+        definitions = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc definitions')
+        end,
+        declarations = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc declarations')
+        end,
+        implementations = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc implementations')
+        end,
+        type_definitions = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc type_definitions')
+        end,
+        diagnostics = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc diagnostics')
+        end,
+        code_actions = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc code_actions')
+        end,
+        line_code_actions = function(keys)
+            U.run_vim('v', keys, '<C-u>Telescope coc line_code_actions')
+        end,
+        file_code_actions = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc file_code_actions')
+        end,
+        document_symbols = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc document_symbols')
+        end,
+        workspace_symbols = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc workspace_symbols')
+        end,
+        workspace_diagnostics = function(keys)
+            U.run_vim('n', keys, '<C-u>Telescope coc workspace_diagnostics')
+        end
     }
 }
 
@@ -113,6 +160,16 @@ T.initialize_mappings = function()
     T.vim_pickers.spell_suggest('z=')
     T.vim_pickers.tags(T.chord('t'))
     T.vim_pickers.vim_options(T.chord('o'))
+
+    -- Coc Stuff
+    T.coc.code_actions('<leader>ac')
+    T.coc.file_code_actions(T.chord('a'))
+    T.coc.line_code_actions('<leader>ac')
+    T.coc.commands(T.chord('C'))
+    T.coc.document_symbols(T.chord('ds'))
+    T.coc.diagnostics(T.chord('dd'))
+    T.coc.workspace_symbols(T.chord('ws'))
+    T.coc.workspace_diagnostics(T.chord('wd'))
 end
 
 return T

@@ -168,7 +168,7 @@ local M = {
         require("telescope.builtin").lsp_workspace_symbols()
     end,
 
-    marks = function() require("telescope.builtin").marks(no_preview()) end,
+    marks = function() require("telescope.builtin").marks() end,
 
     registers = function()
         require("telescope.builtin").registers(no_preview())
