@@ -67,10 +67,15 @@ require('telescope').setup({
             override_file_sorter = true
         },
         frecency = {
-            show_scores = false,
+            show_scores = true,
             show_unindexed = true,
-            ignore_patterns = {"*.git/*", "*/tmp/*"},
-            workspaces = {["nvim"] = "/home/snsm/.config/nvim"}
+            ignore_patterns = {
+                "*.git/*", "*/tmp/*", '*.vscode/*', '*node_modules/*'
+            },
+            workspaces = {
+                ["nvim"] = "/home/snsm/.config/nvim",
+                ["automation"] = "/home/snsm/documents/code/automation/"
+            }
         }
     }
 })
