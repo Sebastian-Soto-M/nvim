@@ -12,6 +12,8 @@ U.run_vim('n', '<leader>bX', 'Sayonara!')
 -- K.insert('n', '<C'-w><C-o>', ':MaximizerToggle!<CR>')
 -- K.insert('t', '<C-w><C-o>', '<C-\\><C-n> :MaximizerToggle!<CR>')
 U.apply_globals({
+    goyo_width = '75%',
+    goyo_height = '90%',
     Illuminate_delay = 300,
     Illuminate_ftblacklist = {'coc-explorer'},
     Illuminate_highlightUnderCursor = 0,
