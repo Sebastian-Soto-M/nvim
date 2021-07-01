@@ -9,6 +9,8 @@ U.run_vim('n', '<leader>ss', 'CtrlSF ', false)
 U.run_vim('n', '<leader>bx', 'Sayonara')
 U.run_vim('n', '<leader>bX', 'Sayonara!')
 -- U.run_vim('<C-n>', 'NvimTreeToggle')
+U.run_vim('n', '<C-w>m', ':MaximizerToggle<CR>')
+U.run_vim('t', '<C-w>m', '<C-\\><C-n> :MaximizerToggle<CR>')
 U.apply_globals({
     goyo_width = '75%',
     goyo_height = '90%',
@@ -22,7 +24,6 @@ U.apply_globals({
     },
     rooter_silent_chdir = 0,
     sort_motion_visual_block_command = 'Vissort',
-    maximizer_default_mapping_key = '<C-w>m',
     maximizer_set_mapping_with_bang = 1,
     sort_motion_flags = 'ui',
     VM_leader = '\\'

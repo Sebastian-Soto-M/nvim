@@ -40,7 +40,9 @@
   "prettier.disableLanguages": ["vue"],
   "prettier.printWidth": 80,
   "prettier.trailingComma": "all",
-
+  "pyright.organizeimports.provider": "isort",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.linting.pylintEnabled": true,
   "yank.highlight.enable": true,
   "yank.list.maxsize": 50,
 
