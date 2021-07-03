@@ -2,14 +2,49 @@
 
 <!-- vim-markdown-toc Marked -->
 
-- [Plugins](#plugins)
-- [Mappings](#mappings)
-  - [Table initialization](#table-initialization)
-  - [Initialize mappings](#initialize-mappings)
-- [LSP](#lsp)
-- [Formatter](#formatter)
+* [Installation](#installation)
+  * [Nvim DEV](#nvim-dev)
+  * [Dependencies](#dependencies)
+  * [Plugins](#plugins)
+* [Plugins](#plugins)
+  * [Download vba file](#download-vba-file)
+* [Mappings](#mappings)
+  * [Table initialization](#table-initialization)
+  * [Initialize mappings](#initialize-mappings)
+* [Formatter](#formatter)
 
 <!-- vim-markdown-toc -->
+
+## Installation
+
+### Nvim DEV
+
+```shell
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update && sudo apt upgrade -y
+sudo apt install neovim
+```
+
+### Dependencies
+
+```shell
+# node
+nvm install --lts
+npm install neovim
+
+# python3
+mkvirtualenv neovim
+pip install pynvim rope autopep8 pylint
+git clone https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+### Plugins
+
+Run the following commands inside vim:
+
+- PackerInstall
+- CocInstall
 
 ## Plugins
 
@@ -68,23 +103,6 @@ T.initialize_mappings = function()
     T.file_pickers.git_files(T.chord('f'))
 end
 ```
-
-## LSP
-
-To find detailed information about lsp configurations, read [this documentation](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
-
-Below you can see the configurations I currently have working
-
-- [x] python
-- [ ] angularls
-- [x] bashls
-- [ ] css
-- [ ] html
-- [ ] json
-- [x] lua
-- [ ] rust
-- [ ] sql
-- [x] tsserver
 
 ## Formatter
 
