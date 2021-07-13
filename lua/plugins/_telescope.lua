@@ -1,4 +1,5 @@
 local actions = require("telescope.actions")
+local home = require('settings.config').HOME
 local previewers = require("telescope.previewers")
 
 require('telescope').setup({
@@ -86,8 +87,8 @@ require('telescope').setup({
                 "*.git/*", "*/tmp/*", '*.vscode/*', '*node_modules/*'
             },
             workspaces = {
-                ["nvim"] = "/home/snsm/.config/nvim",
-                ["automation"] = "/home/snsm/documents/code/automation/"
+                ["nvim"] = home .. '/.config/nvim',
+                ["automation"] = home .. '/documents/code/automation/'
             }
         }
     }
@@ -159,7 +160,7 @@ local M = {
 
     live_grep = function()
         require("telescope.builtin").grep_string(
-            {shorten_path = true, search = vim.fn.input("Grep String > ")})
+            {path_display = true, search = vim.fn.input("Grep String > ")})
     end,
 
     lsp_code_actions = function()

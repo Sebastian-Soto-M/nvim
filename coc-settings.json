@@ -29,8 +29,8 @@
   "java.format.onType.enabled": true,
   "java.format.onType.fixComment.enabled": true,
   "java.format.settings.profile": "GoogleStyle",
-  "java.format.settings.url": "/home/snsm/.config/nvim/formatter/eclipse-java-google-style.xml",
-  "java.home": "/home/snsm/.local/share/sdkman/candidates/java/current",
+  "java.format.settings.url": "~/.config/nvim/formatter/eclipse-java-google-style.xml",
+  "java.home": "~/.local/share/sdkman/candidates/java/current",
 
   "Lua.diagnostics.globals": ["vim", "bunfr"],
 

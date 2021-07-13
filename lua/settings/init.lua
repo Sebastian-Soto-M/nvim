@@ -1,4 +1,5 @@
 local U = require('utils')
+local home = require('settings.config').HOME
 
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
@@ -42,7 +43,7 @@ local options = {
     backup = false,
     writebackup = false,
     swapfile = false,
-    undodir = '/home/snsm/.config/nvim/undodir',
+    undodir = home .. '/.config/nvim/undodir',
 
     -- Text & Breaks
     textwidth = 79,
@@ -56,7 +57,7 @@ local options = {
 
 U.apply_options(options)
 U.apply_globals({
-    python3_host_prog = "/home/snsm/.config/virtualenvs/neovim/bin/python"
+    python3_host_prog = home .. '/.config/virtualenvs/neovim/bin/python'
 })
 
 require('settings._augroups')
