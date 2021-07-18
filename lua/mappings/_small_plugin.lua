@@ -15,7 +15,7 @@ U.apply_globals({
     goyo_width = '75%',
     goyo_height = '90%',
     Illuminate_delay = 300,
-    Illuminate_ftblacklist = {'coc-explorer'},
+    Illuminate_ftblacklist = {''},
     Illuminate_highlightUnderCursor = 0,
     indentLine_char_list = {'┊', '┆', '¦', '|'},
     rooter_patterns = {

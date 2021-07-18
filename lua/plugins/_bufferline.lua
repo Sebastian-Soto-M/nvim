@@ -79,13 +79,7 @@ require('bufferline').setup {
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
         tab_size = 18,
         diagnostics = false,
-        offsets = {
-            {
-                filetype = 'coc-explorer',
-                text = 'File Explorer',
-                text_align = 'center'
-            }
-        },
+        offsets = {},
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_close_icons = true,
         show_close_icon = true,

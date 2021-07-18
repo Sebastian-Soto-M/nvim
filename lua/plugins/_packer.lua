@@ -70,12 +70,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- COC.nvim
-    use {
-        'fannheyward/telescope-coc.nvim',
-        {'neoclide/coc.nvim', branch = 'release'}
-    }
-
     -- Snippets
     use {
         'xabikos/vscode-javascript', 'cstrap/python-snippets',

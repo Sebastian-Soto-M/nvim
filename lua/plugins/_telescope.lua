@@ -1,6 +1,7 @@
 local actions = require("telescope.actions")
 local home = require('settings.config').HOME
 local previewers = require("telescope.previewers")
+local sorters = require("telescope.sorters")
 
 require('telescope').setup({
     defaults = {
@@ -20,9 +21,9 @@ require('telescope').setup({
             horizontal = {mirror = false},
             vertical = {mirror = false}
         },
-        file_sorter = require'telescope.sorters'.get_fuzzy_file,
+        file_sorter = sorters.get_fuzzy_file,
         file_ignore_patterns = {},
-        generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
+        generic_sorter = sorters.get_generic_fuzzy_sorter,
         winblend = 0,
         border = {},
         borderchars = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
@@ -30,12 +31,12 @@ require('telescope').setup({
         use_less = true,
         path_display = {},
         set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
-        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+        file_previewer = previewers.vim_buffer_cat.new,
+        grep_previewer = previewers.vim_buffer_vimgrep.new,
+        qflist_previewer = previewers.vim_buffer_qflist.new,
 
         -- Developer configurations: Not meant for general override
-        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+        buffer_previewer_maker = previewers.buffer_previewer_maker,
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
@@ -113,7 +114,7 @@ local no_preview = function(width)
                     "─", "│", "─", "│", "┌", "┐", "┘", "└"
                 }
             },
-            width = width or W.wide,
+            layout_config = {width = width or W.wide},
             previewer = false
         })
 end
@@ -124,7 +125,7 @@ local M = {
     end,
 
     buffers = function()
-        require("telescope.builtin").buffers(no_preview(W.slender))
+        require("telescope.builtin").buffers()
     end,
 
     command_history = function()
