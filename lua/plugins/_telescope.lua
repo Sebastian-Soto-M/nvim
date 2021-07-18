@@ -97,7 +97,6 @@ require('telescope').setup({
 
 pcall(require("telescope").load_extension, "fzy_native") -- superfast sorter
 pcall(require("telescope").load_extension, "frecency") -- frecency
-pcall(require("telescope").load_extension, "coc") -- coc
 
 local W = {slender = 0.3, narrow = 0.5, wide = 0.8}
 
@@ -124,9 +123,7 @@ local M = {
         require("telescope.builtin").current_buffer_fuzzy_find(no_preview())
     end,
 
-    buffers = function()
-        require("telescope.builtin").buffers()
-    end,
+    buffers = function() require("telescope.builtin").buffers() end,
 
     command_history = function()
         require("telescope.builtin").command_history(no_preview(W.narrow))

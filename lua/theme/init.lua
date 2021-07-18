@@ -18,7 +18,7 @@ if C.THEME.name == 'gruvbox-flat' then
     U.apply_globals({
         gruvbox_flat_style = 'dark',
         gruvbox_transparent = true,
-        gruvbox_sidebars = {'coc-explorer'},
+        gruvbox_sidebars = {''},
         gruvbox_dark_sidebar = true,
         gruvbox_dark_float = false
     })

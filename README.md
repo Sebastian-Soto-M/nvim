@@ -44,7 +44,6 @@ git clone https://github.com/wbthomason/packer.nvim\
 Run the following commands inside vim:
 
 - PackerInstall
-- CocInstall
 
 ## Plugins
 
