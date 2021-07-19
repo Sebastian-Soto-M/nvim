@@ -101,11 +101,14 @@ function U.run_vim(mode, keys, action, enter, env)
     run_cmd(mode, keys, action, C.lang.vim, env, enter)
 end
 
-function U.save_all()
+local function checkpoint(cmd, msg)
     vim.cmd('bufdo Format')
-    vim.cmd('wa')
-    print('Saved all files')
+    vim.cmd(cmd)
+    print(msg)
 end
+
+function U.save_all() checkpoint('wa', 'Saved all files') end
+function U.save_quit_all() checkpoint('wqa', 'Saved all before quit') end
 
 -- FIXME move to generall utils
 local function file_check(file_name)
