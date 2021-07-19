@@ -34,6 +34,29 @@ local I = {
         empty_open = "",
         symlink = "",
         symlink_open = ""
+    },
+    lsp = {
+        text = '',
+        method = 'ƒ',
+        func = '',
+        constructor = '',
+        variable = '',
+        class = '',
+        interface = 'ﰮ',
+        module = '',
+        property = '',
+        unit = '',
+        value = '',
+        enum = '了',
+        keyword = '',
+        snippet = '﬌',
+        color = '',
+        file = '',
+        folder = '',
+        enummember = '',
+        constant = '',
+        struct = ''
     }
 }
+
 return I

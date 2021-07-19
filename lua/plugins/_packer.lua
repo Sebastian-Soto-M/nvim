@@ -72,7 +72,7 @@ return require('packer').startup(function(use)
     }
 
     -- LSP
-    use {'hrsh7th/nvim-compe', 'neovim/nvim-lspconfig'}
+    use {'hrsh7th/nvim-compe', 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim'}
 
     -- Snippets
     use {
