@@ -102,6 +102,7 @@ function U.run_vim(mode, keys, action, enter, env)
 end
 
 function U.save_all()
+    vim.cmd('bufdo Format')
     vim.cmd('wa')
     print('Saved all files')
 end

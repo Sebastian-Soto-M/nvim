@@ -11,16 +11,6 @@ local prettier = function()
     }
 end
 
--- local rustfmt = function()
---   return {
---     exe = "rustfmt",
---     args = {
---       "--emit=stdout"
---     },
---     stdin = true
---   }
--- end
-
 require('formatter').setup({
     logging = false,
     filetype = {
@@ -84,9 +74,9 @@ require('formatter').setup({
 -- vim.api.nvim_command [[autocmd BufWritePost <buffer> FormatWrite]]
 -- vim.api.nvim_command [[augroup END]]
 
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.css,*.graphql,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.mjs,*.py,*.rs,*.scss,*.ts,*.tsx,*.yaml FormatWrite
-augroup END
-]], true)
+-- vim.api.nvim_exec([[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost *.css,*.graphql,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.mjs,*.py,*.rs,*.scss,*.ts,*.tsx,*.yaml FormatWrite
+-- augroup END
+-- ]], true)

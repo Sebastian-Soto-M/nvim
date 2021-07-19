@@ -14,7 +14,8 @@ local definitions = {
             "lua require('utils').load_filetype_config()"
         }
     },
-    indent_line_reset = {{"BufRead", "*", "IndentLinesReset"}}
+    indent_line_reset = {{"BufRead", "*", "IndentLinesReset"}},
+    format_on_save = {{"BufWritePre", "*", "Format"}}
 }
 
 for group, definition in pairs(definitions) do
