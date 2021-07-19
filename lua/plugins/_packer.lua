@@ -11,7 +11,8 @@ return require('packer').startup(function(use)
     use {
         {'tpope/vim-dispatch', cmd = {'Dispatch', 'Start', 'Focus', 'Make'}},
         'machakann/vim-sandwich', 'tpope/vim-unimpaired',
-        'tpope/vim-commentary', 'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
+        'windwp/nvim-autopairs', 'tpope/vim-commentary', 'tpope/vim-abolish',
+        'junegunn/vim-easy-align', -- better tabularize
         'editorconfig/editorconfig-vim', 'dyng/ctrlsf.vim', -- edit search matches in multiple files
         {'metakirby5/codi.vim', opt = true, cmd = 'Codi'}, -- scratch pad
         { -- Sane buffer/window deletion.
@@ -70,10 +71,14 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- LSP
+    use {'hrsh7th/nvim-compe'}
+
     -- Snippets
     use {
         'xabikos/vscode-javascript', 'cstrap/python-snippets',
-        'ylcnfrht/vscode-python-snippet-pack'
+        'ylcnfrht/vscode-python-snippet-pack', 'L3MON4D3/LuaSnip',
+        'hrsh7th/vim-vsnip', 'SirVer/ultisnips'
     }
 
     -- Project

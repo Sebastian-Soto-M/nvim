@@ -52,7 +52,8 @@ local options = {
     encoding = 'UTF-8',
     foldenable = false,
     foldmethod = 'syntax',
-    cursorline = true
+    cursorline = true,
+    completeopt = 'menuone,noinsert,noselect' -- Completion options (for deoplete)
 }
 
 U.apply_options(options)

@@ -1,4 +1,6 @@
 require('plugins._packer')
+require('plugins._compe')
+require('plugins._autopairs')
 require('plugins._formatter')
 require('plugins._telescope')
 require('plugins._treesitter')
