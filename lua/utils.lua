@@ -22,7 +22,7 @@ local function get_set_keymap_fun(env, ...)
     return vim.api.nvim_set_keymap(...)
 end
 
-local function map(mode, keys, action, opts, env)
+function U.map(mode, keys, action, opts, env)
     local options = {noremap = true}
     if opts then options = vim.tbl_extend('force', options, opts) end
     get_set_keymap_fun(env, mode, keys, action, options)
@@ -46,7 +46,7 @@ end
 ---@param action string
 ---@param opts table
 function U.map_global(mode, keys, action, opts)
-    map(mode, keys, action, opts, C.env.global)
+    U.map(mode, keys, action, opts, C.env.global)
 end
 
 ---# Environments
