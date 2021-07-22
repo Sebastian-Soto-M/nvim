@@ -101,10 +101,14 @@ function U.run_vim(mode, keys, action, enter, env)
     run_cmd(mode, keys, action, C.lang.vim, env, enter)
 end
 
-function U.save_all()
-    vim.cmd('wa')
-    print('Saved all files')
+local function checkpoint(cmd, msg)
+    vim.cmd('bufdo Format')
+    vim.cmd(cmd)
+    print(msg)
 end
+
+function U.save_all() checkpoint('wa', 'Saved all files') end
+function U.save_quit_all() checkpoint('wqa', 'Saved all before quit') end
 
 -- FIXME move to generall utils
 local function file_check(file_name)
@@ -138,6 +142,10 @@ function U.load_filetype_config()
     if file_check(ftfile_path) then
         api.nvim_command("luafile " .. ftfile_path)
     end
+end
+
+function U.figlet()
+    vim.cmd('r!figlet ' .. vim.fn.input('Figlet Insert: '))
 end
 
 return U
