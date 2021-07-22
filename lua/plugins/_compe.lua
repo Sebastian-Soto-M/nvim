@@ -30,6 +30,11 @@ require'compe'.setup {
     }
 }
 
+--  _   _ _   _ _
+-- | | | | |_(_) |___
+-- | | | | __| | / __|
+-- | |_| | |_| | \__ \
+--  \___/ \__|_|_|___/
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -68,6 +73,13 @@ _G.s_tab_complete = function()
     end
 end
 
+
+--  __  __                   _
+-- |  \/  | __ _ _ __  _ __ (_)_ __   __ _ ___
+-- | |\/| |/ _` | '_ \| '_ \| | '_ \ / _` / __|
+-- | |  | | (_| | |_) | |_) | | | | | (_| \__ \
+-- |_|  |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
+--              |_|   |_|            |___/
 -- Map tab to the above tab complete functions
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab_complete()', {expr = true})
 vim.api.nvim_set_keymap('s', '<Tab>', 'v:lua.tab_complete()', {expr = true})

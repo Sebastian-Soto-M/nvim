@@ -144,4 +144,8 @@ function U.load_filetype_config()
     end
 end
 
+function U.figlet()
+    vim.cmd('r!figlet ' .. vim.fn.input('Figlet Insert: '))
+end
+
 return U

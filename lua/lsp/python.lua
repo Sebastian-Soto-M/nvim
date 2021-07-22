@@ -11,8 +11,8 @@ local M = {
                     analysis = {
                         autoSearchPaths = true,
                         useLibraryCodeForTypes = true,
-                        typeChekingMode = "strict",
-                        diagnosticMode = "workspace"
+                        typeChekingMode = 'strict',
+                        diagnosticMode = 'workspace'
                     }
                 }
             }

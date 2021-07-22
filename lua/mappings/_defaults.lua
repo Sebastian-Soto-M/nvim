@@ -14,6 +14,7 @@ U.map_global('n', ']t', 'tabn')
 
 U.run_lua('n', '<leader>w', 'require("utils").save_all()') -- K.normal('<C-s>', ':wa<CR>')
 U.run_lua('n', '<leader>q', 'require("utils").save_quit_all()') -- K.normal('<C-s>', ':wa<CR>')
+U.run_lua('n', '<leader>if', 'require("utils").figlet()') -- K.normal('<C-s>', ':wa<CR>')
 
 -- Date insertion
 U.map_global('i', '<Leader>ymd', '<C-R>=strftime("%y%m%d")<CR>')
