@@ -8,5 +8,4 @@ local THEMES = {
 }
 
 C.THEME = THEMES.gruvbox_flat
-C.HOME = os.getenv("HOME")
 return C

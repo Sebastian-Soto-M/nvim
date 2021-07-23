@@ -1,5 +1,5 @@
 local actions = require("telescope.actions")
-local home = require('settings.config').HOME
+local home = os.getenv("HOME")
 local previewers = require("telescope.previewers")
 local sorters = require("telescope.sorters")
 

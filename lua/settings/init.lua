@@ -1,5 +1,5 @@
 local U = require('utils')
-local home = require('settings.config').HOME
+local home = os.getenv("HOME")
 
 vim.cmd 'syntax enable'
 vim.cmd 'filetype plugin indent on'
