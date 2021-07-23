@@ -144,8 +144,12 @@ function U.load_filetype_config()
     end
 end
 
-function U.figlet()
-    vim.cmd('r!figlet ' .. vim.fn.input('Figlet Insert: '))
+function U.figlet() vim.cmd('r!figlet ' .. vim.fn.input('Figlet Insert: ')) end
+
+function U.print_mappings()
+    vim.cmd('redir! > maps.txt')
+    vim.cmd('silent verbose map')
+    vim.cmd('redir END')
 end
 
 return U

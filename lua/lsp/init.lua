@@ -27,13 +27,8 @@ fn.sign_define("LspDiagnosticsSignHint",
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
+capabilities.textDocument.completion.completionItem.resolveSupport =
+    {properties = {'documentation', 'detail', 'additionalTextEdits'}}
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -55,7 +50,7 @@ local on_attach = function(client, bufnr)
     U.run_lua('n', '<leader>wl',
               'print(vim.inspect(vim.lsp.buf.list_workspace_folders()))')
     U.run_lua('n', '<leader>D', 'vim.lsp.buf.type_definition()')
-    U.run_lua('n', '<F2>', 'vim.lsp.buf.rename()')
+    U.run_lua('n', '<leader>rn', 'vim.lsp.buf.rename()')
     U.run_lua('n', 'ga', 'vim.lsp.buf.code_action()')
     T.lsp.references('gr')
     U.run_lua('n', '<leader>d',
