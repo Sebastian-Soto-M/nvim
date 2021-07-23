@@ -1,5 +1,5 @@
 .gitignore
 .vscode/
-undodir/
 spell/
-test.py
+undodir/
+plugin/packer_compiled.lua

@@ -55,7 +55,7 @@ local on_attach = function(client, bufnr)
     U.run_lua('n', '<leader>wl',
               'print(vim.inspect(vim.lsp.buf.list_workspace_folders()))')
     U.run_lua('n', '<leader>D', 'vim.lsp.buf.type_definition()')
-    U.run_lua('n', '<space>rn', 'vim.lsp.buf.rename()')
+    U.run_lua('n', '<F2>', 'vim.lsp.buf.rename()')
     U.run_lua('n', 'ga', 'vim.lsp.buf.code_action()')
     T.lsp.references('gr')
     U.run_lua('n', '<leader>d',
