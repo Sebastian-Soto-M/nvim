@@ -15,7 +15,7 @@ local definitions = {
         }
     },
     indent_line_reset = {{"BufRead", "*", "IndentLinesReset"}},
-    format_on_save = {{"BufWritePost", "*", "Format"}}
+    format_on_save = {{"BufWritePost", "*", "FormatWrite"}}
 }
 
 for group, definition in pairs(definitions) do
