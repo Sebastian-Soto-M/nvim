@@ -72,6 +72,9 @@ end
 -- require('lsp.json')
 -- require('lsp.lua')
 require('lsp.python').init(on_attach, capabilities)
+require('flutter-tools').setup {
+    lsp = {on_attach = on_attach, capabilities = capabilities}
+}
 -- require('lsp.ts')
 -- require('lsp.vim')
 -- require('lsp.rust')

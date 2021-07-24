@@ -97,6 +97,7 @@ require('telescope').setup({
 
 pcall(require("telescope").load_extension, "fzy_native") -- superfast sorter
 pcall(require("telescope").load_extension, "frecency") -- frecency
+pcall(require("telescope").load_extension, "flutter") -- flutter
 
 local W = {slender = 0.3, narrow = 0.5, wide = 0.8}
 

@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
 
     -- UI/UX
     use {
-        'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
+        'kyazdani42/nvim-tree.lua', 'RRethy/vim-illuminate', -- 'glepnir/dashboard-nvim',
         'Yggdroot/indentLine', 'gennaro-tedesco/nvim-peekup', -- view register contents
         'norcalli/nvim-colorizer.lua', -- colored hex codes
         'akinsho/nvim-bufferline.lua', {'dracula/vim', as = 'dracula'},
@@ -72,7 +72,10 @@ return require('packer').startup(function(use)
     }
 
     -- LSP
-    use {'hrsh7th/nvim-compe', 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim'}
+    use {
+        'hrsh7th/nvim-compe', 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim',
+        'akinsho/flutter-tools.nvim'
+    }
 
     -- Snippets
     use {
