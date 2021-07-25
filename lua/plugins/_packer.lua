@@ -74,7 +74,7 @@ return require('packer').startup(function(use)
     -- LSP
     use {
         'hrsh7th/nvim-compe', 'neovim/nvim-lspconfig', 'onsails/lspkind-nvim',
-        'akinsho/flutter-tools.nvim'
+        'akinsho/flutter-tools.nvim', 'dart-lang/dart-vim-plugin'
     }
 
     -- Snippets

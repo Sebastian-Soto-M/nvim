@@ -102,7 +102,6 @@ function U.run_vim(mode, keys, action, enter, env)
 end
 
 local function checkpoint(cmd, msg)
-    vim.cmd('bufdo Format')
     vim.cmd(cmd)
     print(msg)
 end

@@ -20,7 +20,7 @@ U.apply_globals({
     indentLine_char_list = {'┊', '┆', '¦', '|'},
     rooter_patterns = {
         '.git', 'Makefile', '*.sln', 'build/env.sh', '.vscode', 'src',
-        'node_modules'
+        'node_modules', 'pubspec.yaml', 'LICENSE', '.gitignore'
     },
     rooter_silent_chdir = 0,
     sort_motion_visual_block_command = 'Vissort',
