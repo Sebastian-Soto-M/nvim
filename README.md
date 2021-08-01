@@ -2,16 +2,17 @@
 
 <!-- vim-markdown-toc Marked -->
 
-* [Installation](#installation)
-  * [Nvim DEV](#nvim-dev)
-  * [Dependencies](#dependencies)
-  * [Plugins](#plugins)
-* [Plugins](#plugins)
-  * [Download vba file](#download-vba-file)
-* [Mappings](#mappings)
-  * [Table initialization](#table-initialization)
-  * [Initialize mappings](#initialize-mappings)
-* [Formatter](#formatter)
+- [Installation](#installation)
+  - [Nvim DEV](#nvim-dev)
+  - [Dependencies](#dependencies)
+  - [Plugins](#plugins)
+  - [Download vba file](#download-vba-file)
+- [Mappings](#mappings)
+  - [Table initialization](#table-initialization)
+  - [Initialize mappings](#initialize-mappings)
+- [Formatter](#formatter)
+- [Minimal VIMRC](#minimal-vimrc)
+  - [Vimscript](#vimscript)
 
 <!-- vim-markdown-toc -->
 
@@ -44,8 +45,6 @@ git clone https://github.com/wbthomason/packer.nvim\
 Run the following commands inside vim:
 
 - PackerInstall
-
-## Plugins
 
 To check the plugins installed go to **lua>plugins>\_packer.lua**
 
@@ -109,20 +108,77 @@ To find detailed information about formatting configurations, read [this documen
 
 Below you can see the configurations I currently have working
 
-- [ ] c
-- [ ] c#
-- [ ] cpp
-- [x] css
 - [x] html
-- [ ] java
+
 - [x] javascript
+- [x] typescript
+
 - [x] json
-- [x] lua
-- [x] markdown
-- [x] python
+
+- [x] css
 - [x] sass
 - [x] scss
-- [ ] shell script
-- [ ] sql
-- [x] typescript
+
+- [x] dart
+- [x] java
+- [x] lua
+- [x] python
+
+- [x] markdown
 - [x] yaml
+
+## Minimal VIMRC
+
+### Vimscript
+
+```vimscript
+"   ___        _   _
+"  / _ \ _ __ | |_(_) ___  _ __  ___
+" | | | | '_ \| __| |/ _ \| '_ \/ __|
+" | |_| | |_) | |_| | (_) | | | \__ \
+"  \___/| .__/ \__|_|\___/|_| |_|___/
+"       |_|
+set hidden
+set scrolloff=5 sidescrolloff=10
+set shiftround
+set noshowmode
+set ignorecase smartcase
+set splitbelow splitright
+set number relativenumber
+set signcolumn="yes"
+set mouse="a"
+set nobackup nowritebackup noswapfile
+set undofile undodir=/home/snsm/.config/nvim/undodir " change the path
+set expandtab smarttab smartindent
+set shiftwidth=2 tabstop=2 softtabstop=2
+set textwidth=79 colorcolumn=80
+set clipboard="unnamedplus"
+
+"  __  __                   _
+" |  \/  | __ _ _ __  _ __ (_)_ __   __ _ ___
+" | |\/| |/ _` | '_ \| '_ \| | '_ \ / _` / __|
+" | |  | | (_| | |_) | |_) | | | | | (_| \__ \
+" |_|  |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
+"              |_|   |_|            |___/
+nn Y y$ " expected behavior
+nn N Nzzzv " center before search
+nn J mzJ`z " keep cursor where it was after joining lines
+" Undo break points
+ino , ,<c-g>u
+ino . .<c-g>u
+ino ? ?<c-g>u
+ino ! !<c-g>u
+ino ; ;<c-g>u
+ino : :<c-g>u
+" Jumplist mutations
+nn <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nn <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+" Text motion
+ino <C-j> <esc>:m .+1<CR>==
+ino <C-k> <esc>:m .-2<CR>==
+nn <leader>j :m .+1<CR>==
+nn <leader>k :m .-2<CR>==
+vn J :m '>+1<CR>gv=gv
+vn K :m '<-2<CR>gv=gv
+
+```
