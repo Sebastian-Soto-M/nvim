@@ -10,10 +10,10 @@ set shiftround
 set noshowmode
 set ignorecase smartcase
 set splitbelow splitright
-set number relativenumber
+set relativenumber
 set signcolumn="yes"
 set mouse="a"
-set nobackup nowritebackup noswapfile 
+set nobackup nowritebackup noswapfile
 set undofile undodir=/home/snsm/.config/nvim/undodir " change the path
 set expandtab smarttab smartindent
 set shiftwidth=2 tabstop=2 softtabstop=2
@@ -26,8 +26,24 @@ set clipboard="unnamedplus"
 " | |  | | (_| | |_) | |_) | | | | | (_| \__ \
 " |_|  |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
 "              |_|   |_|            |___/
+ino jk <esc>
+tno jk <C-\\><C-n>
+nn <c-a> ggVG
+nn <c-h> <c-w>h
+nn <c-j> <c-w>j
+nn <c-k> <c-w>k
+nn <c-l> <c-w>l
+nn [t tabp
+nn ]t tabn
+
+"  ____       _                 _
+" | __ )  ___| |__   __ ___   _(_) ___  _ __
+" |  _ \ / _ \ '_ \ / _` \ \ / / |/ _ \| '__|
+" | |_) |  __/ | | | (_| |\ V /| | (_) | |
+" |____/ \___|_| |_|\__,_| \_/ |_|\___/|_|
 nn Y y$ " expected behavior
-nn N Nzzzv " center before search
+" nn n nzzzv " center before search
+" nn N Nzzzv " center before search
 nn J mzJ`z " keep cursor where it was after joining lines
 " Undo break points
 ino , ,<c-g>u
