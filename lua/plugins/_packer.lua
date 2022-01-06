@@ -44,9 +44,16 @@ return require('packer').startup(function(use)
 
     -- Motion and text objects
     use {
-        'mg979/vim-visual-multi', 'wellle/targets.vim', 'phaazon/hop.nvim',
+        'mg979/vim-visual-multi', 'wellle/targets.vim',
         'unblevable/quick-scope', 'christoomey/vim-sort-motion',
-        'michaeljsmith/vim-indent-object', 'yuttie/comfortable-motion.vim'
+        'michaeljsmith/vim-indent-object', 'yuttie/comfortable-motion.vim', {
+            'phaazon/hop.nvim',
+            branch = 'v1', -- optional but strongly recommended
+            config = function()
+                -- you can configure Hop the way you like here; see :h hop-config
+                require'hop'.setup()
+            end
+        }
     }
 
     -- UI/UX
