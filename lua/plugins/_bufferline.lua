@@ -60,7 +60,6 @@ local I = require('theme.icons')
 require('bufferline').setup {
     options = {
         numbers = 'none',
-        number_style = 'none',
         mappings = false,
         close_command = 'bdelete! %d', -- can be a string | function, see 'Mouse actions'
         right_mouse_command = 'vertical sbuffer %d', -- can be a string | function, see 'Mouse actions'

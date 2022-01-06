@@ -57,7 +57,7 @@ local options = {
 
 U.apply_options(options)
 U.apply_globals({
-    python3_host_prog = home .. '/.config/virtualenvs/neovim/bin/python'
+    python3_host_prog = home .. '/.config/nvim/.env/bin/python'
 })
 
 require('settings._augroups')
