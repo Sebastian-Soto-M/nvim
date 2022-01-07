@@ -162,9 +162,9 @@ T.initialize_mappings = function()
     T.vim_pickers.vim_options(T.chord('o'))
 
     -- Coc Stuff
-    T.coc.code_actions('<leader>ac')
+    -- T.coc.code_actions('<leader>ac')
+    -- T.coc.line_code_actions('<leader>ac')
     T.coc.file_code_actions(T.chord('a'))
-    T.coc.line_code_actions('<leader>ac')
     T.coc.commands(T.chord('C'))
     T.coc.document_symbols(T.chord('ds'))
     T.coc.diagnostics(T.chord('dd'))
