@@ -43,9 +43,6 @@ require('formatter').setup({
                 }
             end
         },
-        -- let g:formatdef_cstm_java='"astyle --mode=java --style=java -M120 -xC80 -xt4 -xe -xg"'
-        -- let g:formatters_java=['cstm_java']
-
         json = {prettier},
         markdown = {prettier},
         python = {
@@ -60,16 +57,6 @@ require('formatter').setup({
                 }
             end
         },
-        dart = {
-            function()
-                return {
-                    exe = "dart",
-                    args = {'format', '--fix', vim.api.nvim_buf_get_name(0)},
-                    stdin = false,
-                    ignore_exitcode = true
-                }
-            end
-        },
         lua = {
             function()
                 return {
@@ -79,9 +66,6 @@ require('formatter').setup({
                 }
             end
         },
-        sass = {prettier},
-        scss = {prettier},
-        typescript = {prettier},
         yaml = {prettier}
     }
 })
@@ -97,6 +81,6 @@ require('formatter').setup({
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.dart,*.css,*.graphql,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.mjs,*.py,*.rs,*.scss,*.ts,*.tsx,*.yaml FormatWrite
+  autocmd BufWritePost *.css,*.graphql,*.html,*.js,*.json,*.jsx,*.lua,*.md,*.mjs,*.py,*.scss,*.yaml FormatWrite
 augroup END
 ]], true)
