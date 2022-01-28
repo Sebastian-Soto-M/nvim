@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-cssmodules',
             \ 'coc-emmet',
+            \ 'coc-flutter',
             \ 'coc-diagnostic',
             \ 'coc-explorer',
             \ 'coc-html',

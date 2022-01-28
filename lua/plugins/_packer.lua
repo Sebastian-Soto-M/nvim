@@ -123,6 +123,6 @@ return require('packer').startup(function(use)
     use {
         'mattn/emmet-vim', { -- Lua
             'euclidianAce/BetterLua.vim'
-        }
+        }, 'dart-lang/dart-vim-plugin'
     }
 end)

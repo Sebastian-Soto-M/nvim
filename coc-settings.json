@@ -17,6 +17,8 @@
   "explorer.previewAction.onHover": false,
   "explorer.width": 30,
 
+  "flutter.sdk.flutter-lookup": "which flutter",
+
   "html.autoClosingTags": true,
   "html.enable": true,
   "html.filetypes": ["html", "jinja", "jinja.html"],
