@@ -1,2 +1,2 @@
-require("mappings._normal")
-require("mappings._visual")
+require('mappings._defaults')
+require('mappings._lsp')
