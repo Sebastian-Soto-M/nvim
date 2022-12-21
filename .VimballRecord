@@ -1,2 +1,0 @@
-visincr.vba: call delete('/home/snsm/.config/nvim/plugin/visincrPlugin.vim')|call delete('/home/snsm/.config/nvim/autoload/visincr.vim')|call delete('/home/snsm/.config/nvim/doc/visincr.txt')
-vissort.vba: call delete('/home/snsm/.config/nvim/plugin/vissortPlugin.vim')|call delete('/home/snsm/.config/nvim/doc/vissort.txt')|call delete('/home/snsm/.config/nvim/autoload/vissort.vim')
