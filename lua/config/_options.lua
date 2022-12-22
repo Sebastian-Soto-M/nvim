@@ -11,7 +11,6 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 -- UI
 vim.opt.colorcolumn = "80"
-vim.opt.guicursor = ""
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
