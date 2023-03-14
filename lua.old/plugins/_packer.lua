@@ -2,51 +2,18 @@ vim.cmd [[packadd packer.nvim]]
 -- git clone https://github.com/wbthomason/packer.nvim\
 --  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 return require('packer').startup(function(use)
-    -- To handle Lua configuration
-    use {'wbthomason/packer.nvim', 'tami5/sql.nvim'}
-    use {'kyazdani42/nvim-web-devicons', opt = false}
-    use {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}
 
     -- Development
     use {
         {'tpope/vim-dispatch', cmd = {'Dispatch', 'Start', 'Focus', 'Make'}},
-        'machakann/vim-sandwich', 'tpope/vim-unimpaired',
-        'tpope/vim-commentary', 'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
-        'editorconfig/editorconfig-vim', 'dyng/ctrlsf.vim', -- edit search matches in multiple files
-        {'metakirby5/codi.vim', opt = true, cmd = 'Codi'}, -- scratch pad
-        { -- Sane buffer/window deletion.
-            'mhinz/vim-sayonara',
-            cmd = 'Sayonara',
-            opt = true
-        }, -- Wrapper for an external formatter
-        {"mhartington/formatter.nvim", opt = true, cmd = "Format"}
-
-    }
-
-    -- Telescope
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            'nvim-telescope/telescope-frecency.nvim',
-            "nvim-telescope/telescope-fzy-native.nvim"
-        }
-    }
-
-    -- Git
-    use {
-        'tpope/vim-fugitive', 'tpope/vim-rhubarb', 'lewis6991/gitsigns.nvim',
-        { -- Vim and Neovim plugin to reveal the commit messages under the cursor
-            'rhysd/git-messenger.vim',
-            cmd = 'GitMessenger',
-            opt = true
-        }
+        'tpope/vim-abolish', 'junegunn/vim-easy-align', -- better tabularize
     }
 
     -- Motion and text objects
     use {
-        'mg979/vim-visual-multi', 'wellle/targets.vim',
-        'unblevable/quick-scope', 'christoomey/vim-sort-motion',
-        'michaeljsmith/vim-indent-object', 'yuttie/comfortable-motion.vim', {
+        'mg979/vim-visual-multi',
+        'christoomey/vim-sort-motion',
+        'yuttie/comfortable-motion.vim', {
             'phaazon/hop.nvim',
             branch = 'v1', -- optional but strongly recommended
             config = function()
